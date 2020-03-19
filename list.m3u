@@ -59,3 +59,13 @@ http://111.13.111.242/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226229/1.m3
 http://111.13.111.167/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226333/1.m3u8
 #EXTINF:-1 group-title="央视频道",CCTV-17农村农业
 http://111.13.111.242/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226318/1.m3u8
+#EXTINF:-1 group-title="港台",翡翠台
+http://hk.tv0668.com/dl/hk520.php?id=1
+#EXTINF:-1 group-title="港台",明珠台
+http://hk.tv0668.com/dl/hk520.php?id=13
+#EXTINF:-1 group-title="港台",无线新闻
+http://hk.tv0668.com/dl/hk520.php?id=9
+#EXTINF:-1 group-title="港台",无线财经
+http://hk.tv0668.com/dl/hk520.php?id=10
+#EXTINF:-1 group-title="港台",TVB J2
+http://hk.tv0668.com/dl/hk520.php?id=12
