@@ -36,9 +36,10 @@ CCTV-17农村农业,http://111.13.111.242/otttv.bj.chinamobile.com/PLTV/88888888
 无线新闻,http://hk.tv0668.com/dl/hk520.php?id=9
 无线财经,http://hk.tv0668.com/dl/hk520.php?id=10
 TVB J2,http://hk.tv0668.com/dl/hk520.php?id=12
-
-
-
+测试频道,#genre#
+TVB翡翠台,p8p://0198.02686.cc:16871/5d1a69fb000eb19011bef55c89140144.ts
+TVB明珠台,vjms://23.237.33.155:8500:3502/live/cid=367
+TVBS欢乐台,rtmp://59.124.75.137/sat/tv421
 
 
 
