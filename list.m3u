@@ -1,95 +1,95 @@
 #EXTM3U
-#EXTINF:-1 group-title="央视频道",CCTV-1HD
+#EXTINF:-1,CCTV-1HD
 http://111.13.111.242/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226226/1.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV-1HD
+#EXTINF:-1,CCTV-1HD
 http://140.249.30.111/tlivecloud-cdn.ysp.cctv.cn/001/2000210103.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV-2HD
+#EXTINF:-1,CCTV-2HD
 http://111.13.111.242/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226230/1.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV-2HD
+#EXTINF:-1,CCTV-2HD
 http://119.167.204.72/tlivecloud-cdn.ysp.cctv.cn/001/2000203603.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV-3HD
+#EXTINF:-1,CCTV-3HD
 http://140.249.30.111/tlivecloud-cdn.ysp.cctv.cn/001/2000203803.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV-3HD
+#EXTINF:-1,CCTV-3HD
 http://120.204.20.147/tlivecloud-cdn.ysp.cctv.cn/001/2000203803.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV-4HD
+#EXTINF:-1,CCTV-4HD
 http://111.13.111.242/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226314/1.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV-4HD
+#EXTINF:-1,CCTV-4HD
 http://140.249.30.111/tlivecloud-cdn.ysp.cctv.cn/001/2000204803.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV-5HD
+#EXTINF:-1,CCTV-5HD
 http://140.249.30.111/tlivecloud-cdn.ysp.cctv.cn/001/2000205103.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV-5HD
+#EXTINF:-1,CCTV-5HD
 http://120.204.20.147/tlivecloud-cdn.ysp.cctv.cn/001/2000205103.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV-5+HD
+#EXTINF:-1,CCTV-5+HD
 http://111.13.111.242/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226225/1.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV-5+HD
+#EXTINF:-1,CCTV-5+HD
 http://120.204.20.147/tlivecloud-cdn.ysp.cctv.cn/001/2000204503.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV-6HD
+#EXTINF:-1,CCTV-6HD
 http://223.110.243.139/PLTV/3/224/3221225548/index.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV-7HD
+#EXTINF:-1,CCTV-7HD
 http://111.13.111.242/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226234/1.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV-7HD
+#EXTINF:-1,CCTV-7HD
 http://140.249.30.111/tlivecloud-cdn.ysp.cctv.cn/001/2000510003.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV-8HD
+#EXTINF:-1,CCTV-8HD
 http://120.204.20.147/tlivecloud-cdn.ysp.cctv.cn/001/2000203903.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV-8HD
+#EXTINF:-1,CCTV-8HD
 http://119.167.204.72/tlivecloud-cdn.ysp.cctv.cn/001/2000203903.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV-9HD
+#EXTINF:-1,CCTV-9HD
 http://111.13.111.242/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226236/1.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV-9HD
+#EXTINF:-1,CCTV-9HD
 http://120.204.20.147/tlivecloud-cdn.ysp.cctv.cn/001/2000499403.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV-10HD
+#EXTINF:-1,CCTV-10HD
 http://111.13.111.242/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226227/1.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV-10HD
+#EXTINF:-1,CCTV-10HD
 http://ott.fj.chinamobile.com/PLTV/88888888/224/3221225814/1.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV-11HD
+#EXTINF:-1,CCTV-11HD
 http://111.13.111.242/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226315/1.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV-11HD
+#EXTINF:-1,CCTV-11HD
 http://ott.fj.chinamobile.com/PLTV/88888888/224/3221225815/1.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV-12HD
+#EXTINF:-1,CCTV-12HD
 http://111.13.111.242/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226228/1.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV-12HD
+#EXTINF:-1,CCTV-12HD
 http://120.204.20.147/tlivecloud-cdn.ysp.cctv.cn/001/2000202603.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV-13HD
+#EXTINF:-1,CCTV-13HD
 http://119.167.204.72/tlivecloud-cdn.ysp.cctv.cn/001/2000204603.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV-13HD
+#EXTINF:-1,CCTV-13HD
 http://120.204.20.147/tlivecloud-cdn.ysp.cctv.cn/001/2000204603.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV-14HD
+#EXTINF:-1,CCTV-14HD
 http://111.13.111.242/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226229/1.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV-14HD
+#EXTINF:-1,CCTV-14HD
 http://120.204.20.147/tlivecloud-cdn.ysp.cctv.cn/001/2000204403.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV-15HD
+#EXTINF:-1,CCTV-15HD
 http://111.13.111.167/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226333/1.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV-15HD
+#EXTINF:-1,CCTV-15HD
 http://ott.fj.chinamobile.com/PLTV/88888888/224/3221225818/1.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV-17HD
+#EXTINF:-1,CCTV-17HD
 http://111.13.111.242/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226318/1.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV-17HD
+#EXTINF:-1,CCTV-17HD
 http://ott.fj.chinamobile.com/PLTV/88888888/224/3221226990/1.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV-4K超清
+#EXTINF:-1,CCTV-4K超清
 http://120.204.20.147/tlivecloud-cdn.ysp.cctv.cn/001/2000266303.m3u8
-#EXTINF:-1 group-title="省内频道",广东珠江频道
+#EXTINF:-1,广东珠江频道
 http://nclive.grtn.cn/zjpd/sd/live.m3u8
-#EXTINF:-1 group-title="省内频道",公共频道
+#EXTINF:-1,公共频道
 http://nclive.grtn.cn/ggpd/sd/live.m3u8
-#EXTINF:-1 group-title="省内频道",新闻频道
+#EXTINF:-1,新闻频道
 http://nclive.grtn.cn/xwpd/sd/live.m3u8
-#EXTINF:-1 group-title="省内频道",房产频道
+#EXTINF:-1,房产频道
 http://szlive.grtn.cn/fcpd/sd/live.m3u8
-#EXTINF:-1 group-title="省内频道",国际频道
+#EXTINF:-1,国际频道
 http://nclive.grtn.cn/gjpd/sd/live.m3u8
-#EXTINF:-1 group-title="省内频道",移动频道
+#EXTINF:-1,移动频道
 http://szlive.grtn.cn/ydpd/sd/live.m3u8
-#EXTINF:-1 group-title="省内频道",少儿频道
+#EXTINF:-1,少儿频道
 http://nclive.grtn.cn/tvs5/sd/live.m3u8
-#EXTINF:-1 group-title="省内频道",广东嘉佳卡通
+#EXTINF:-1,广东嘉佳卡通
 http://nclive.grtn.cn/jjkt/sd/live.m3u8
-#EXTINF:-1 group-title="省内频道",广东南方卫视
+#EXTINF:-1,广东南方卫视
 http://nclive.grtn.cn/tvs2/sd/live.m3u8
-#EXTINF:-1 group-title="省内频道",广东现代教育
+#EXTINF:-1,广东现代教育
 http://szlive.grtn.cn/jypd/sd/live.m3u8
-#EXTINF:-1 group-title="省内频道",广东体育频道
+#EXTINF:-1,广东体育频道
 http://nclive.grtn.cn/typd/sd/live.m3u8
-#EXTINF:-1 group-title="省内频道",广东经济科教频道
+#EXTINF:-1,广东经济科教频道
 http://nclive.grtn.cn/tvs1hd/hd/live.m3u8
-#EXTINF:-1 group-title="省内频道",广东影视频道
+#EXTINF:-1,广东影视频道
 http://nclive.grtn.cn/tvs4/sd/live.m3u8
