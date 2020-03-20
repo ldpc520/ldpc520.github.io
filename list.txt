@@ -59,21 +59,16 @@ CCTV-17农村农业,http://111.13.111.242/otttv.bj.chinamobile.com/PLTV/88888888
 新疆卫视高清],http://111.13.111.242/otttv.bj.chinamobile.com/PLTV/88888888/224/3221225901/1.m3u8
 西藏卫视高清,http://111.13.111.242/otttv.bj.chinamobile.com/PLTV/88888888/224/3221225900/1.m3u8
 港台,#genre#
-翡翠台,http://hk.tv0668.com/dl/hk520.php?id=1#http://116.199.5.51:8114/index.m3u8?Fsv_chan_hls_se_idx=188&FvSeid=1&Fsv_ctype=LIVES&Fsv_otype=1&Provider_id=&Pcontent_id=.m3u8#P2p://sdgdklwos.finetv.tv:9906/5ad32c0d0000bbd049ef0eab717740e2#P2p://sdgdklwos.finetv.tv:9906/5a562a0b000d7041619b441d562d5ee8
-明珠台,http://hk.tv0668.com/dl/hk520.php?id=13#P2p://sdgdklwos.finetv.tv:9906/59fd0d0a0009323a02476cb020fe16f9#P2p://sdgdklwos.finetv.tv:9906/5ad32b590006aefa49ec511272c5262e
-无线新闻,http://hk.tv0668.com/dl/hk520.php?id=9#P2p://sdgdklwos.finetv.tv:9906/5a562bec0007bfd761a2998e00b83dd5#P2p://sdgdklwos.finetv.tv:9906/5ad32bdc000b780449ee52022e841cf7
-无线财经,http://hk.tv0668.com/dl/hk520.php?id=10#P2p://sdgdklwos.finetv.tv:9906/59fd314f000be93d02d51ae40a3a24e8#P2p://sdgdklwos.finetv.tv:9906/5ad32aed000d8fa649eaacf716d70340
-TVB J2,http://hk.tv0668.com/dl/hk520.php?id=12#P2p://sdgdklwos.finetv.tv:9906/5ad32b7d000cca4049ecdf4812f47470#P2p://sdgdklwos.finetv.tv:9906/59fd25e80008aaec02a88fc1476f2edf
+翡翠台,http://hk.tv0668.com/dl/hk520.php?id=1#http://116.199.5.51:8114/index.m3u8?Fsv_chan_hls_se_idx=188&FvSeid=1&Fsv_ctype=LIVES&Fsv_otype=1&Provider_id=&Pcontent_id=.m3u8#http://www.zdlive.top/lstv/lstv.phpid=1
+明珠台,http://hk.tv0668.com/dl/hk520.php?id=13
+无线新闻,http://hk.tv0668.com/dl/hk520.php?id=9
+无线财经,http://hk.tv0668.com/dl/hk520.php?id=10
+TVB J2,http://hk.tv0668.com/dl/hk520.php?id=12
 香港卫视,http://zhibo.hkstv.tv/livestream/mutfysrq/playlist.m3u8
-凤凰卫视资讯台,P2p://sdgdklwos.finetv.tv:9906/59fd0c48000e15630244781932ff7852#http://hk.tv0668.com/dl/hk520.php?id=3#http://112.17.40.197:80/PLTV/88888888/224/3221226491/index.m3u8?icpid=88888888&from=30&hms_devid=1452,1481&online=1580892610&vqe=1
-凤凰卫视中文台,#P2p://sdgdklwos.finetv.tv:9906/59fd0c6c0006fd67024502e414f10ff3http://hk.tv0668.com/dl/hk520.php?id=2#http://112.17.40.139:80/PLTV/88888888/224/3221226368/index.m3u8?icpid=88888888&from=30&hms_devid=1452,1451&online=1580892662&vqe=1
-凤凰卫视香港台,P2p://sdgdklwos.finetv.tv:9906/59fd0c19000767ad0243becb40b07246#http://qlive.fengshows.cn/live720p/PHK.flv?txSecret=0738ce47619ffb6578bb658b7d7927d3&txTime=16f9470cacc
+凤凰卫视资讯台,http://hk.tv0668.com/dl/hk520.php?id=3#http://112.17.40.197:80/PLTV/88888888/224/3221226491/index.m3u8?icpid=88888888&from=30&hms_devid=1452,1481&online=1580892610&vqe=1
+凤凰卫视中文台,http://hk.tv0668.com/dl/hk520.php?id=2#http://112.17.40.139:80/PLTV/88888888/224/3221226368/index.m3u8?icpid=88888888&from=30&hms_devid=1452,1451&online=1580892662&vqe=1
+凤凰卫视香港台,http://qlive.fengshows.cn/live720p/PHK.flv?txSecret=0738ce47619ffb6578bb658b7d7927d3&txTime=16f9470cacc
 VIVUTV,http://hk.tv0668.com/dl/hk520.php?id=8
-TVB星河台,P2p://sdgdklwos.finetv.tv:9906/59fd3f91000c54e4030cccd33c6f6c3c
-寰宇新闻台,P2p://sdgdklwos.finetv.tv:9906/59fd2b5e0006d13802bde4340bc41e87
-TVB武术台,P2p://sdgdklwos.finetv.tv:9906/5a32174e0001f481d4b0ec8f67f06c2b
-天映经典台,P2p://sdgdklwos.finetv.tv:9906/5b2e01c400098d0f0c42edad22c37385
-天映频道HD,P2p://sdgdklwos.finetv.tv:9906/5b2f1ee9000d3e3d109cc71f4b240eb3
 星空卫视,http://hk.tv0668.com/dl/hk520.php?id=18
 澳门卫视,http://hk.tv0668.com/dl/hk520.php?id=23
 奥亚卫视,http://hk.tv0668.com/dl/hk520.php?id=24
