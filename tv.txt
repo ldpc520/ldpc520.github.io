@@ -1,4 +1,9 @@
-明珠台,http://pull.scphsd.com/live/e20a7679c32a12f0de0b3ae783bbfc4a.flv
-凤凰卫视中文台,http://qlive.fengshows.cn/live720p/PCC.flv
-凤凰卫视香港台,http://qlive.fengshows.cn/live720p/PHK.flv
-凤凰卫视资讯台,http://ywotttv.bj.chinamobile.com/PLTV/88888888/224/3221225949/1.m3u8#http://liveali.ifeng.com/live/FHZX.m3u8#http://qlive.fengshows.cn/live720p/PIN.flv
+翡翠台,http://hk.tv0668.com/dl/hk520.php?id=1
+明珠台,http://hk.tv0668.com/dl/hk520.php?id=13
+无线新闻,http://hk.tv0668.com/dl/hk520.php?id=9
+无线财经,http://hk.tv0668.com/dl/hk520.php?id=10
+TVB J2,http://hk.tv0668.com/dl/hk520.php?id=12
+香港卫视,http://zhibo.hkstv.tv/livestream/mutfysrq/playlist.m3u8
+凤凰卫视资讯台,http://112.17.40.197:80/PLTV/88888888/224/3221226491/index.m3u8?icpid=88888888&from=30&hms_devid=1452,1481&online=1580892610&vqe=1
+凤凰卫视中文台,http://112.17.40.139:80/PLTV/88888888/224/3221226368/index.m3u8?icpid=88888888&from=30&hms_devid=1452,1451&online=1580892662&vqe=1
+凤凰卫视香港台,http://qlive.fengshows.cn/live720p/PHK.flv?txSecret=0738ce47619ffb6578bb658b7d7927d3&txTime=16f9470cacc
