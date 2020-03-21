@@ -1,3 +1,4 @@
+港台,#genre#
 翡翠台,http://hk.tv0668.com/dl/hk520.php?id=1
 明珠台,http://hk.tv0668.com/dl/hk520.php?id=13
 无线新闻,http://hk.tv0668.com/dl/hk520.php?id=9
