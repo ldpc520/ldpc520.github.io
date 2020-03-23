@@ -60,10 +60,10 @@ CCTV-17农村农业,http://111.13.111.242/otttv.bj.chinamobile.com/PLTV/88888888
 西藏卫视高清,http://111.13.111.242/otttv.bj.chinamobile.com/PLTV/88888888/224/3221225900/1.m3u8
 港台,#genre#
 翡翠台,http://hk.tv0668.com/dl/hk520.php?id=1#http://pull.scphsd.com/live/28e7f4646afc32511ae043526245ff2d/playlist.m3u8
-明珠台,http://hk.tv0668.com/dl/hk520.php?id=13
-无线新闻,http://hk.tv0668.com/dl/hk520.php?id=9
+明珠台,http://hk.tv0668.com/dl/hk520.php?id=13#http://pull.scphsd.com/live/cd6785a8881fac4ef593b8b5c81c3721/playlist.m3u8
+无线新闻,http://hk.tv0668.com/dl/hk520.php?id=9#http://pull.scphsd.com/live/06df51c3767936a9d60e726f1ef485a4/playlist.m3u8
 无线财经,http://hk.tv0668.com/dl/hk520.php?id=10
-TVB J2,http://hk.tv0668.com/dl/hk520.php?id=12
+TVB J2,http://hk.tv0668.com/dl/hk520.php?id=12#http://pull.scphsd.com/live/a7d90acc31178e54a8946823b2532056/playlist.m3u8
 香港卫视,http://zhibo.hkstv.tv/livestream/mutfysrq/playlist.m3u8
 凤凰卫视资讯台,http://hk.tv0668.com/dl/hk520.php?id=3#http://112.17.40.197:80/PLTV/88888888/224/3221226491/index.m3u8?icpid=88888888&from=30&hms_devid=1452,1481&online=1580892610&vqe=1
 凤凰卫视中文台,http://hk.tv0668.com/dl/hk520.php?id=2#http://112.17.40.139:80/PLTV/88888888/224/3221226368/index.m3u8?icpid=88888888&from=30&hms_devid=1452,1451&online=1580892662&vqe=1
