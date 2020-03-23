@@ -59,7 +59,7 @@ CCTV-17农村农业,http://111.13.111.242/otttv.bj.chinamobile.com/PLTV/88888888
 新疆卫视高清],http://111.13.111.242/otttv.bj.chinamobile.com/PLTV/88888888/224/3221225901/1.m3u8
 西藏卫视高清,http://111.13.111.242/otttv.bj.chinamobile.com/PLTV/88888888/224/3221225900/1.m3u8
 港台,#genre#
-翡翠台,http://hk.tv0668.com/dl/hk520.php?id=1#http://116.199.5.51:8114/index.m3u8?Fsv_chan_hls_se_idx=188&FvSeid=1&Fsv_ctype=LIVES&Fsv_otype=1&Provider_id=&Pcontent_id=.m3u8
+翡翠台,http://hk.tv0668.com/dl/hk520.php?id=1#http://pull.scphsd.com/live/28e7f4646afc32511ae043526245ff2d/playlist.m3u8
 明珠台,http://hk.tv0668.com/dl/hk520.php?id=13
 无线新闻,http://hk.tv0668.com/dl/hk520.php?id=9
 无线财经,http://hk.tv0668.com/dl/hk520.php?id=10
