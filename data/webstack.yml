@@ -3,6 +3,10 @@
 - taxonomy: 常用推荐
   icon: far fa-star
   links: 
+      - title: Alist
+      logo: alist.jpg
+      url: https://alist.nn.ci/zh/
+      description: 强大的网盘程序。
     - title: 语雀
       logo: 语雀.jpg
       url: https://www.yuque.com/
