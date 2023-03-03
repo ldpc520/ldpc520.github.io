@@ -1,0 +1,12 @@
+public/
+resources/
+node_modules/
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+.directory
+.hugo_build.lock
+jsconfig.json
+themes/WebStack-Hugo/.git
