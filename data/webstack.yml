@@ -207,21 +207,21 @@
           usrl: https://www.jianguoyun.com/
           description: 坚果云官网。
         - title: 123盘
-      logo:  123pan.png
-      url: https://www.123pan.com/
-      description: 不限速网盘。
-    - title: GXNAS个人盘
-      logo: gxnas.png
-      url: https://pan.gxnas.com:1443/
-      description: 黑群晖、Esxi、PVE。
-    - title: 易有云
-      logo: 易有云.png
-      url: https://www.linkease.com/
-      description: 个人存储。
-    - title: 蓝奏云
-      logo: 蓝奏云.png
-      url: https://www.lanzou.com/
-      description: 小文件高速存储
+          logo:  123pan.png
+          url: https://www.123pan.com/
+          description: 不限速网盘。
+        - title: GXNAS个人盘
+          logo: gxnas.png
+          url: https://pan.gxnas.com:1443/
+          description: 黑群晖、Esxi、PVE。
+        - title: 易有云
+          logo: 易有云.png
+          url: https://www.linkease.com/
+          description: 个人存储。
+        - title: 蓝奏云
+          logo: 蓝奏云.png
+          url: https://www.lanzou.com/
+          description: 小文件高速存储
     - term: 图标素材
       links:
         - title: Iconfinder
