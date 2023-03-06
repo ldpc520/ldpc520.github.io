@@ -7,6 +7,18 @@
       logo: alist.png
       url: https://alist.nn.ci/zh/
       description: 强大的网盘程序。
+    - title: MT管理器
+      logo:  mt.png
+      url: https://bbs.binmt.cc/
+      description: APK反编译软件。
+    - title: 果核剥壳
+      logo: 果核.png
+      url: https://www.ghxi.com/
+      description: 绿化软件下载。
+    - title: 奈斯搜索
+      logo: 奈斯搜索.jpg
+      url: https://www.niceso.fun/
+      description: 阿里云盘资源搜索引擎。
     - title: 语雀
       logo: 语雀.jpg
       url: https://www.yuque.com/
