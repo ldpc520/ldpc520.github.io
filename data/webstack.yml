@@ -3,10 +3,10 @@
 - taxonomy: 常用推荐
   icon: far fa-star
   links: 
-    - title: Alist
+    - title: 个人Alist
       logo: alist.png
-      url: https://alist.nn.ci/zh/
-      description: 强大的网盘程序。
+      url: http://110.41.20.148:5244/
+      description: 个人网盘列表。
     - title: MT管理器
       logo:  mt.png
       url: https://bbs.binmt.cc/
@@ -190,10 +190,10 @@
   list:
     - term: 网盘资源
       links:
-      - title: 个人Alist
+      - title: Alist
           logo: alist.png
-          url: http://110.41.20.148:5244/
-          description: 个人网盘列表。
+          url: https://alist.nn.ci/zh/
+          description: 强大的网盘列表。
         - title: 百度网盘
           logo: 百度网盘.jpg
           url: http://pan.baidu.com/
