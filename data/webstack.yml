@@ -178,6 +178,10 @@
           logo: 百度网盘.jpg
           url: http://pan.baidu.com/
           description: https://pan.baidu.com/.
+        - title: Alist
+          url: https://alist.nn.ci/zh/
+          logo: alist.png
+          description: 强大的网盘列表程序
         - title: 阿里云盘
           logo: 阿里云盘.png
           url: https://www.aliyundrive.com/
