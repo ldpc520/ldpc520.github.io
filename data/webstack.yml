@@ -125,6 +125,42 @@
   list:
     - term: 影音视频
       links:
+        - title: 声色互联
+          url: https://sswww.net/
+          logo: 声色互联.png
+          description: 音乐
+        - title: 果核音乐
+          url: https://music.ghxi.com/
+          logo: 果核音乐.png
+          description: 免费的音乐，得扫码验证
+        - title: Music Tools
+          url: https://www.whg6.com/html/musictools/
+          logo: Music_Tools.png
+          description: 一款免费的音乐下载软件
+        - title: 苹果CMS
+          url: https://www.maccms.pro/
+          logo: 苹果cms.png
+          description: 影视网站源码
+        - title: 奈斯搜索
+          url: https://www.niceso.fun/
+          logo: 奈斯搜索.png
+          description: 阿里云盘搜索
+        - title: Listen播放器
+          url: https://listen1.github.io/listen1/
+          logo: Listen.png
+          description: 音乐播放器
+        - title: MyFreeMp3
+          url: https://tools.liumingye.cn/music/#/
+          logo: myfreemp3.png
+          description: 音乐库
+        - title: 音乐下载吧
+          url: https://music.y444.cn/#/
+          logo: 音乐下载吧.png
+          description: 免费音乐下载
+        - title: 影视森林
+          url: http://www.549.tv/
+          logo: 影视森林.png
+          description: 一个收录了90%以上的影视网站
         - title: 腾讯视频
           logo: 腾讯视频.png
           url: http://v.qq.com/
