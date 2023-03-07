@@ -637,26 +637,42 @@
           description: IT 互联网开源编程书籍免费阅读与下载。
     - term: 博客论坛
       links:
-        - title: Inoreader
-          url: https://www.inoreader.com/
-          logo: inoreader.jpg
-          description: 重新掌控你的新闻订阅源。
-        - title: Hacker News
-          url: https://news.ycombinator.com/
-          logo: hacker-news.jpg
-          description: 一家关于计算机黑客和创业公司的社会化新闻网站。
-        - title: 经管之家
-          url: https://bbs.pinggu.org/
-          logo: 经管之家.jpg
-          description: 国内活跃的经济、管理、金融、统计在线教育和咨询网站。
-        - title: 阮一峰的网络日志
-          url: http://www.ruanyifeng.com/blog/
-          logo: 阮一峰.png
-          description: 阮一峰，科技爱好者周刊。
-        - title: 酷壳
-          url: https://www.coolshell.cn/
-          logo: ''
-          description: 酷 壳 – CoolShell。
+        - title: 你好多多DIY
+          logo: 你好多多.png
+          url: http://nihaodd.com/
+          description: 路由器硬改刷机教程
+        - title: 海阔视界
+          logo: 海阔视界.png
+          url: https://haikuoshijie.cn/
+          description: 一个强大的小程序开发工个
+        - title: 六音软件
+          logo: 六音软件.png
+          url: https://www.sixyin.com/
+          description: 绿色软件下载站
+        - title: 大眼仔
+          logo: 大眼仔.png
+          url: http://www.dayanzai.me/
+          description: 绿色软件下载站
+        - title: 佰阅部落
+          logo: 佰阅部落.png
+          url: https://baiyue.one/
+          description: 源码和技术资源分享站
+        - title: 易破姐
+          logo: 易破姐.png
+          url: https://www.ypojie.com/
+          description: 绿色软件下载站
+        - title: 梅塔沃克
+          logo: 梅塔沃克.png
+          url: https://iweec.com/
+          description: 超级白嫖UP主
+        - title: Video Talk
+          logo: talk.png
+          url: https://vt.wooomooo.com/
+          description: 大量的各种教程
+        - title: 我不是矿神
+          logo: 我不是矿神.png
+          url: https://imnks.com/
+          description: 各类教程,特别是群晖
     - term: 设计规范
       links:
         - title: Design Guidelines
