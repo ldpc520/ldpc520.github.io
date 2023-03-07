@@ -190,10 +190,14 @@
   list:
     - term: 网盘资源
       links:
+      - title: 个人Alist
+          logo: alist.png
+          url: http://110.41.20.148:5244/
+          description: 个人网盘列表。
         - title: 百度网盘
           logo: 百度网盘.jpg
           url: http://pan.baidu.com/
-          description: https://pan.baidu.com/.
+          description: 龟速网盘
         - title: 阿里云盘
           logo: 阿里云盘.png
           url: https://www.aliyundrive.com/
