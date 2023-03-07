@@ -188,7 +188,7 @@
           description: 个人存储
         - title: GXNAS
           url: https://pan.gxnas.com:1443/
-          logo: GXNAS.png
+          logo: gxnas.png
           description: 黑群晖引导、Esxi、pve
         - title: 百度网盘
           logo: 百度网盘.jpg
