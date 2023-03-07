@@ -48,32 +48,24 @@
 - taxonomy: 科研办公
   icon: fas fa-flask fa-lg
   list:
-    - term: 生物信息
+    - term: 内网穿透
       links:
-        - title: NCBI
-          logo: ncbi.jpg
-          url: https://www.ncbi.nlm.nih.gov/
-          description: National Center for Biotechnology Information.
-        - title: Bioconda
-          logo: bioconda.jpg
-          url: https://anaconda.org/bioconda/
-          description: "Bioconda :: Anaconda.org."
-        - title: CPAN
-          logo: cpan.jpg
-          url: https://metacpan.org/
-          description: Search the CPAN.
-        - title: Gitter Galaxy
-          logo: gitter.jpg
-          url: https://gitter.im/galaxyproject
-          description: Galaxy Gitter Community.
-        - title: R Project
-          logo: r-project.jpg
-          url: https://www.r-project.org/
-          description: https://www.r-project.org
-        - title: Bioconductor
-          logo: bioconductor.jpg
-          url: http://www.bioconductor.org/
-          description: http://www.bioconductor.org
+        - title: DDNS TO
+          url: https://www.ddnsto.com/
+          logo: ddnsto.png
+          description: 免费7天无限手动续期的内网穿透
+        - title: 小鸡内网穿透
+          url: https://www.chickfrp.com/
+          logo: 小鸡内网穿透.png
+          description: 每月5G免费流量
+        - title: 樱花内网穿透
+          url: https://www.natfrp.com/
+          logo: 樱花穿透.png
+          description: 一个很出名的内网穿透
+        - title: 凯速内网穿透
+          url: https://my.ksust.com/service.htm
+          logo: 凯速穿透.png
+          description: 免费的内网穿透
     - term: 云服务器
       links:
         - title: 阿里云
