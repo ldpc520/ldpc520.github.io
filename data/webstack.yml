@@ -272,7 +272,7 @@
           description: 家庭云|网盘|文件备份|资源分享。
         - title: 坚果云
           logo: 坚果云.png
-          usrl: https://www.jianguoyun.com/
+          url: https://www.jianguoyun.com/
           description: 坚果云官网。
     - term: 图标素材
       links:
@@ -642,8 +642,16 @@
           logo: gaoding.png
           description: 免费在线抠图软件,图片快速换背景-抠白底图。
         
-    - term: 谷歌插件
+    - term: 浏览器插件
       links:
+        - title: Crx搜搜
+          url: https://www.crxsoso.com/
+          logo: crx搜搜.png
+          description: 浏览器插件
+        - title: 极简插件
+          url: https://chrome.zzzmh.cn/
+          logo: 极简插件.png
+          description: 浏览器插件
         - title: wappalyzer
           url: https://www.wappalyzer.com/
           logo: wappalyzer.png
