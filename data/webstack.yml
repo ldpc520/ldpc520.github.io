@@ -637,6 +637,10 @@
           description: IT 互联网开源编程书籍免费阅读与下载。
     - term: 博客论坛
       links:
+        - title: 恩山论坛
+          url: https://www.right.com.cn/forum/forum.php
+          logo: 恩山论坛.png
+          description: IPTV及各种路由器刷机教程
         - title: 你好多多DIY
           logo: 你好多多.png
           url: http://nihaodd.com/
