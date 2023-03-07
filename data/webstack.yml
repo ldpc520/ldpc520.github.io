@@ -625,26 +625,74 @@
           url: https://www.right.com.cn/forum/forum.php
           logo: 恩山论坛.png
           description: IPTV及各种路由器固件教程
-        - title: Inoreader
-          url: https://www.inoreader.com/
-          logo: inoreader.jpg
-          description: 重新掌控你的新闻订阅源。
-        - title: Hacker News
-          url: https://news.ycombinator.com/
-          logo: hacker-news.jpg
-          description: 一家关于计算机黑客和创业公司的社会化新闻网站。
-        - title: 经管之家
-          url: https://bbs.pinggu.org/
-          logo: 经管之家.jpg
-          description: 国内活跃的经济、管理、金融、统计在线教育和咨询网站。
-        - title: 阮一峰的网络日志
-          url: http://www.ruanyifeng.com/blog/
-          logo: 阮一峰.png
-          description: 阮一峰，科技爱好者周刊。
-        - title: 酷壳
-          url: https://www.coolshell.cn/
-          logo: ''
-          description: 酷 壳 – CoolShell。
+        - title: 你好多多DIY
+          url: http://nihaodd.com/
+          logo: 你好多多.png
+          description: 路由器硬改固件、教程
+        - title: 海阔视界
+          url: https://haikuoshijie.cn/
+          logo: 海阔视界.png
+          description: 各种小程序的开发工具
+        - title: 六音软件
+          url: https://www.sixyin.com/
+          logo: 六音软件.png
+          description: 绿色软件下载
+        - title: 大眼仔
+          url: http://www.dayanzai.me/
+          logo: 大眼仔.png
+          description: 绿色软件下载
+        - title: 佰阅部落
+          url: https://baiyue.one/
+          logo: 佰阅部落.png
+          description: 源码、教程
+        - title: 易破姐
+          url: https://www.ypojie.com/
+          logo: 易破姐.png
+          description: 绿色软件下载
+        - title: 梅塔沃克
+          url: https://iweec.com/
+          logo: 梅塔沃克.png
+          description: 超级白嫖UP主
+        - title: Video Talk
+          url: https://vt.wooomooo.com/
+          logo: talk.png
+          description: 大量的各种教程
+        - title: 我不是矿神
+          url: https://imnks.com/
+          logo: 我不是矿神.png
+          description: 大量的NAS教程、黑群晖
+        - title: Alist
+          url: https://alist.nn.ci/zh/
+          logo: alist.png
+          description: 一款支持挂载多种网盘的程序
+        - title: 果核剥壳
+          url: https://www.ghxi.com/
+          logo: 果核.png
+          description: 绿色软件下载
+        - title: 秋无痕
+          url: http://bbs.realqwh.cn/
+          logo: 秋无痕.png
+          description: 各种系统资源
+        - title: 智能电视网
+          url: https://www.znds.com/
+          logo: 智能电视.png
+          description: IPTV技术论坛
+        - title: 萝卜论坛
+          url: https://bbs.luobotou.org/
+          logo: 萝卜.png
+          description: Win To Go
+        - title: 飘云阁
+          url: https://www.chinapyg.com/
+          logo: 飘云阁.png
+          description: 破解论坛
+        - title: 吾爱破解
+          url: https://www.52pojie.cn/
+          logo: 吾爱破解.png
+          description: 互联网安全
+        - title: MT管理器
+          url: https://bbs.binmt.cc/
+          logo: mt.png
+          description: APK反编译工具
     - term: 设计规范
       links:
         - title: Design Guidelines
