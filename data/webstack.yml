@@ -641,42 +641,6 @@
           url: https://www.right.com.cn/forum/forum.php
           logo: 恩山论坛.png
           description: IPTV及各种路由器刷机教程
-        - title: 你好多多DIY
-          logo: 你好多多.png
-          url: http://nihaodd.com/
-          description: 路由器硬改刷机教程
-        - title: 海阔视界
-          logo: 海阔视界.png
-          url: https://haikuoshijie.cn/
-          description: 一个强大的小程序开发工个
-        - title: 六音软件
-          logo: 六音软件.png
-          url: https://www.sixyin.com/
-          description: 绿色软件下载站
-        - title: 大眼仔
-          logo: 大眼仔.png
-          url: http://www.dayanzai.me/
-          description: 绿色软件下载站
-        - title: 佰阅部落
-          logo: 佰阅部落.png
-          url: https://baiyue.one/
-          description: 源码和技术资源分享站
-        - title: 易破姐
-          logo: 易破姐.png
-          url: https://www.ypojie.com/
-          description: 绿色软件下载站
-        - title: 梅塔沃克
-          logo: 梅塔沃克.png
-          url: https://iweec.com/
-          description: 超级白嫖UP主
-        - title: Video Talk
-          logo: talk.png
-          url: https://vt.wooomooo.com/
-          description: 大量的各种教程
-        - title: 我不是矿神
-          logo: 我不是矿神.png
-          url: https://imnks.com/
-          description: 各类教程,特别是群晖
     - term: 设计规范
       links:
         - title: Design Guidelines
