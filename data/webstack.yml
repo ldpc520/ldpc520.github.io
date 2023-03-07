@@ -193,16 +193,52 @@
           logo: 电影天堂.png
           url: https://www.dygod.net/
           description: 电影天堂（DYGOD），高清电影下载。
-    - term: 游戏竞技
+    - term: 路由NAS
       links:
-        - title: 百度贴吧
-          logo: 百度贴吧.jpg
-          url: ttps://tieba.baidu.com/index.html
-          description: 百度贴吧。
-        - title: 台服战地
-          logo: 战地之王.png
-          url: https://ava.mangot5.com/ava/index
-          description: 台服 AVA 战地之王。
+        - title: 海思芯机顶盒NAS
+          url: https://histb.com/
+          logo: 海思芯.png
+          description: 盒子版NAS系统
+        - title: 宿云CF
+          url: https://cf.9sep.org/
+          logo: 宿云CF.png
+          description: CF第三方平台
+        - title: 爱快软路由
+          url: https://www.ikuai8.com/
+          logo: 爱快.png
+          description: 免费的X86路由器系统
+        - title: Koolcenter路由器系统
+          url: https://www.koolcenter.com/
+          logo: koolcenter路由.png
+          description: OpenWRT基础上弄出来的路由器系统
+        - title: 梦牛Cf
+          url: https://www.mnn.tw/
+          logo: 梦牛CF.png
+          description: CF第三方平台
+        - title: OpenWRT插件仓库
+          url: https://op.supes.top/packages/
+          logo: openwrt插件.png
+          description: openwrt各种架构插件
+        - title: 不死breed
+          url: https://breed.hackpascal.net/
+          logo: breed.png
+          description: 各种路由器刷机的底包
+        - title: Padavan固件
+          url: http://opt.cn2qq.com/padavan/
+          logo: padavan.png
+          description: padavan老毛子固件
+        - title: FROS路由器系统
+          url: http://www.fros.org.cn/
+          logo: fros.png
+          description: OpenWRT基础上弄出来的路由器系统
+        - title: 清华大学开源镜像站
+          url: https://mirrors.tuna.tsinghua.edu.cn/
+          logo: 清华大学镜像.png
+          description: 各种系统镜像下载站点
+        - title: OpenWRT在线定制编译
+          url: https://supes.top/
+          logo: op定制.png
+          description: 在线定制编译openwrt固件
    
       
 - taxonomy: 素材资源
