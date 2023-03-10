@@ -3,6 +3,10 @@
 - taxonomy: 常用推荐
   icon: far fa-star
   links: 
+    - title: 个人博客
+      url: http://www.ldpc.cf/
+      logo: zblog.png
+      description: 个人博客
     - title: 个人Alist
       url: http://110.41.20.148:5244/
       logo: alist.png
