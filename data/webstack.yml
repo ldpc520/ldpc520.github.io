@@ -3,6 +3,38 @@
 - taxonomy: 常用推荐
   icon: far fa-star
   links: 
+    - title: 个人Alist
+      url: http://110.41.20.148:5244/
+      logo: alist.png
+      description: 个人网盘程序
+    - title: 当贝播放器
+      url: https://www.dangbei.com/player/
+      logo: 当贝播放器.png
+      description: 强大而简单的播放器
+    - title: Office_tool
+      url: https://otp.landian.vip/zh-cn/
+      logo: office_tool.png
+      description: office 办公软件
+    - title: Todesk
+      url: https://enterprise.todesk.com/
+      logo: todesk.png
+      description: 免费远程软件
+    - title: 深蓝远程
+      url: https://www.slser.com/
+      logo: 深蓝远程.png
+      description: 简单的远程软件
+    - title: 宝塔
+      url: http://192.168.31.11:8880
+      logo: 宝塔.png
+      description: 
+    - title: 群晖NAS
+      url: http://192.168.31.9
+      logo: 群晖.png
+      description: 
+    - title: Esxi
+      url: http://192.168.31.10
+      logo: esxi.png
+      description: 
     - title: 语雀
       logo: 语雀.jpg
       url: https://www.yuque.com/
