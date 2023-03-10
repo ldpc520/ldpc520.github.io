@@ -274,6 +274,73 @@
           logo: 坚果云.png
           url: https://www.jianguoyun.com/
           description: 坚果云官网。
+    - term: 干货分享
+      links:
+        - title: Watt Toolkit
+          url: https://steampp.net/
+          logo: watt_toolkit.png
+          description: Github加速
+        - title: Imgurl
+          url: https://www.imgurl.org/vip/manage/upload
+          logo: imgurl图床.png
+          description: 一个速度不错的图床
+        - title: 萌精灵
+          url: https://cdn.moeelf.com/
+          logo: 萌精灵.jpg
+          description: Cloudflare第三方平台
+        - title: Kiftd
+          url: https://kohgylw.gitee.io/
+          logo: kiftd.png
+          description: 网盘程序
+        - title: zfile
+          url: https://www.zfile.vip/
+          logo: zfile.jpg
+          description: 一款网盘程序
+        - title: 广东移动测速
+          url: http://120.198.253.58:5080/?template=index-free-apps-apptest
+          logo: 广东移动测速.png
+          description: 广东移动专用测速
+        - title: Typecho
+          url: https://typecho.org/
+          logo: Typecho.png
+          description: 简易博客程序
+        - title: Agit
+          url: https://agit.ai/
+          logo: agit.png
+          description: 代码托管
+        - title: Gitea
+          url: https://gitea.com/
+          logo: gitea.png
+          description: 代码托管
+        - title: Gitcode
+          url: https://gitcode.net/
+          logo: gitcode.png
+          description: 代码托管
+        - title: eu.org
+          url: https://nic.eu.org/
+          logo: eu.org.png
+          description: 一个可以申请免费永久域名的网站
+        - title: Cloudflare
+          url: https://dash.cloudflare.com/login
+          logo: cloudflare.png
+          description: 可以实实现ipv4及ipv6互相访问
+        - title: Freenom
+          url: https://www.freenom.com/zh/index.html?lang=zh
+          logo: freenom.png
+          description: 一个可以申请免费域名的网站
+        - title: 钙网
+          url: https://www.uugai.com/
+          logo: logo在线制作.png
+          description: 在线制作LOGO
+        - title: 中国科技大学测速
+          url: https://test.ustc.edu.cn/
+          logo: 中国科技大学测速.png
+          description: 网络测速
+        - title: 图床导航
+          url: http://imgdh.com/
+          logo: 图床导航.png
+          description: 图床导航
+
     - term: 图标素材
       links:
         - title: Iconfinder
