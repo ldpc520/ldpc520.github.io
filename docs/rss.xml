@@ -1,5 +1,17 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>我的小窝</title><link>https://ldpc520.github.io</link><description>收集一些自己用得着的干货</description><copyright>我的小窝</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://telegraph-image-c25.pages.dev/file/d6c73c5a867cc03158a78.png</url><title>avatar</title><link>https://ldpc520.github.io</link></image><lastBuildDate>Thu, 20 Jun 2024 23:03:07 +0000</lastBuildDate><managingEditor>我的小窝</managingEditor><ttl>60</ttl><webMaster>我的小窝</webMaster><item><title>把多个PHP代理源码都集合在一个PHP文件里</title><link>https://ldpc520.github.io/post/ba-duo-ge-PHP-dai-li-yuan-ma-du-ji-he-zai-yi-ge-PHP-wen-jian-li.html</link><description>```php&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>我的小窝</title><link>https://ldpc520.github.io</link><description>收集一些自己用得着的干货</description><copyright>我的小窝</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://telegraph-image-c25.pages.dev/file/d6c73c5a867cc03158a78.png</url><title>avatar</title><link>https://ldpc520.github.io</link></image><lastBuildDate>Thu, 20 Jun 2024 23:56:52 +0000</lastBuildDate><managingEditor>我的小窝</managingEditor><ttl>60</ttl><webMaster>我的小窝</webMaster><item><title>广东移动IPTV单线复用、Padavan老毛子单播成功【笔记】</title><link>https://ldpc520.github.io/post/guang-dong-yi-dong-IPTV-dan-xian-fu-yong-%E3%80%81Padavan-lao-mao-zi-dan-bo-cheng-gong-%E3%80%90-bi-ji-%E3%80%91.html</link><description>准备工作：&#13;
+&#13;
+温馨提示：改动前建议先抓包，电脑连接光猫的IPTV口打开这个网址就能抓到广东移动的频道列表：http://183.235.16.92:8082/epg/api/custom/getAllChannel2.json&#13;
+1、广东移动光猫超级帐号：CMCCAdmin 密码：aDm8H%MdA&#13;
+2、一个Padavan老毛子的路由器，Lan口越多越好，方便一些，不低于两个Lan口&#13;
+实操步骤：&#13;
+**一、以超级管理员帐号登陆光猫进行如下图设置，数值不要照搬，根据你的光猫实际数值来填**&#13;
+![光猫1](https://github.com/ldpc520/ldpc520.github.io/assets/62380221/67975189-3933-428e-9277-5334f59944dd)&#13;
+![光猫2](https://github.com/ldpc520/ldpc520.github.io/assets/62380221/00b3e6cf-916a-47db-9121-5edf8896180a)&#13;
+![光猫3](https://github.com/ldpc520/ldpc520.github.io/assets/62380221/829c672d-3c62-4155-9b94-5112f5fcbbeb)&#13;
+![光猫4](https://github.com/ldpc520/ldpc520.github.io/assets/62380221/73c5975e-5062-4fb5-b40f-2f442671c627)&#13;
+&#13;
+**二、用一根网连接光猫的Lan1口和路由器的WAN口。</description><guid isPermaLink="true">https://ldpc520.github.io/post/guang-dong-yi-dong-IPTV-dan-xian-fu-yong-%E3%80%81Padavan-lao-mao-zi-dan-bo-cheng-gong-%E3%80%90-bi-ji-%E3%80%91.html</guid><pubDate>Thu, 20 Jun 2024 23:56:30 +0000</pubDate></item><item><title>把多个PHP代理源码都集合在一个PHP文件里</title><link>https://ldpc520.github.io/post/ba-duo-ge-PHP-dai-li-yuan-ma-du-ji-he-zai-yi-ge-PHP-wen-jian-li.html</link><description>```php&#13;
 &lt;?php&#13;
 &#13;
 error_reporting(0);&#13;
