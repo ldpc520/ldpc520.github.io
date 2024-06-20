@@ -14,17 +14,14 @@ $vid=$_GET['vid'];
 
 
 
-    if ($vid == 'hd') {
-
-        $id=$_GET["id"];
-
-        $info=file_get_contents("http://mob.api.cditv.cn/show/192-".$id.".html");
-
-        preg_match('/HDlive_url":"(.*?)"/i',$info,$sn);
-
-        $ts=str_replace('\/','/',$sn[1]);
-
-        header("Location:".$ts);
+    if ($vid == 'haoqu') {
+        //http://192.168.31.11:1008/proxy/zuhe.php?vid=haoqu&id=38072
+        $id=$_REQUEST['id'];
+        //获取网页内容
+        $url = "http://tv.haoqu99.com/e/extend/tv.php?id=".$id;
+        $info=file_get_contents($url);
+        preg_match('/source src="(.*?)"/i',$info,$m);
+        header("location:".$m[1]);
 
     } 
 

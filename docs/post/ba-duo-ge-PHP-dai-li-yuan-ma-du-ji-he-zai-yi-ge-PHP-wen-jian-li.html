@@ -25,17 +25,14 @@ $vid=$_GET['vid'];
 
 
 
-    if ($vid == 'hd') {
-
-        $id=$_GET['id'];
-
-        $info=file_get_contents('http://mob.api.cditv.cn/show/192-'.$id.'.html');
-
-        preg_match('/HDlive_url':'(.*?)'/i',$info,$sn);
-
-        $ts=str_replace('\/','/',$sn[1]);
-
-        header('Location:'.$ts);
+    if ($vid == 'haoqu') {
+        //http://192.168.31.11:1008/proxy/zuhe.php?vid=haoqu&id=38072
+        $id=$_REQUEST['id'];
+        //获取网页内容
+        $url = 'http://tv.haoqu99.com/e/extend/tv.php?id='.$id;
+        $info=file_get_contents($url);
+        preg_match('/source src='(.*?)'/i',$info,$m);
+        header('location:'.$m[1]);
 
     } 
 
@@ -87,17 +84,14 @@ $vid=$_GET['vid'];
 
 
 
-    if ($vid == 'hd') {
-
-        $id=$_GET['id'];
-
-        $info=file_get_contents('http://mob.api.cditv.cn/show/192-'.$id.'.html');
-
-        preg_match('/HDlive_url':'(.*?)'/i',$info,$sn);
-
-        $ts=str_replace('\/','/',$sn[1]);
-
-        header('Location:'.$ts);
+    if ($vid == 'haoqu') {
+        //http://192.168.31.11:1008/proxy/zuhe.php?vid=haoqu&id=38072
+        $id=$_REQUEST['id'];
+        //获取网页内容
+        $url = 'http://tv.haoqu99.com/e/extend/tv.php?id='.$id;
+        $info=file_get_contents($url);
+        preg_match('/source src='(.*?)'/i',$info,$m);
+        header('location:'.$m[1]);
 
     } 
 
@@ -205,17 +199,14 @@ header(<span class="pl-s">'Content-Type: text/json;charset=UTF-8'</span>);
 
 
 
-    <span class="pl-k">if</span> (<span class="pl-s1"><span class="pl-c1">$</span>vid</span> == <span class="pl-s">'hd'</span>) {
-
-        <span class="pl-s1"><span class="pl-c1">$</span>id</span>=<span class="pl-s1"><span class="pl-c1">$</span><span class="pl-c1">_GET</span></span>["<span class="pl-s">id</span>"];
-
-        <span class="pl-s1"><span class="pl-c1">$</span>info</span>=file_get_contents("<span class="pl-s">http://mob.api.cditv.cn/show/192-</span>".<span class="pl-s1"><span class="pl-c1">$</span>id</span>."<span class="pl-s">.html</span>");
-
-        preg_match(<span class="pl-s">'/HDlive_url":"(.*?)"/i'</span>,<span class="pl-s1"><span class="pl-c1">$</span>info</span>,<span class="pl-s1"><span class="pl-c1">$</span>sn</span>);
-
-        <span class="pl-s1"><span class="pl-c1">$</span>ts</span>=str_replace(<span class="pl-s">'\/'</span>,<span class="pl-s">'/'</span>,<span class="pl-s1"><span class="pl-c1">$</span>sn</span>[<span class="pl-c1">1</span>]);
-
-        header("<span class="pl-s">Location:</span>".<span class="pl-s1"><span class="pl-c1">$</span>ts</span>);
+    <span class="pl-k">if</span> (<span class="pl-s1"><span class="pl-c1">$</span>vid</span> == <span class="pl-s">'haoqu'</span>) {
+        <span class="pl-c">//http://192.168.31.11:1008/proxy/zuhe.php?vid=haoqu&amp;id=38072</span>
+        <span class="pl-s1"><span class="pl-c1">$</span>id</span>=<span class="pl-s1"><span class="pl-c1">$</span><span class="pl-c1">_REQUEST</span></span>[<span class="pl-s">'id'</span>];
+        <span class="pl-c">//获取网页内容</span>
+        <span class="pl-s1"><span class="pl-c1">$</span>url</span> = "<span class="pl-s">http://tv.haoqu99.com/e/extend/tv.php?id=</span>".<span class="pl-s1"><span class="pl-c1">$</span>id</span>;
+        <span class="pl-s1"><span class="pl-c1">$</span>info</span>=file_get_contents(<span class="pl-s1"><span class="pl-c1">$</span>url</span>);
+        preg_match(<span class="pl-s">'/source src="(.*?)"/i'</span>,<span class="pl-s1"><span class="pl-c1">$</span>info</span>,<span class="pl-s1"><span class="pl-c1">$</span>m</span>);
+        header("<span class="pl-s">location:</span>".<span class="pl-s1"><span class="pl-c1">$</span>m</span>[<span class="pl-c1">1</span>]);
 
     } 
 
