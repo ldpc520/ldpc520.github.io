@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="//cdn.staticfile.net/Primer/21.0.7/primer.css" rel="stylesheet" />
+    <link rel="icon" href="https://github.githubassets.com/favicons/favicon.svg"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="**脚本一：是利用URL获取到ipv6地址的**
+这个脚本需要先手动在你的域名下添加要解析的子域名才可以正常解析
+```shell
+#!/bin/bash
+# -------------------------------------------------------------------------------
+#Dnspod Only-ipv6 DDNS with BashShell
+#改编自https://github.com/kkkgo/dnspod-ddns-with-bashshell
+#API_ID和API_Token在Dnspod的控制台 -> 账号中心 -> 密钥管理 -> 创建密钥
+#确保子域名已经存在解析AAAA记录，如没有则手动去创建一个AAAA记录
+#获取自己的外网ip地址请详细查看https://www.ddnspod.com
+# -------------------------------------------------------------------------------
+
+#CONF START
+API_ID='12345' #填写自己的API_ID
+API_Token='abcdefgfikajhsbdemdcm172849409328'  #填写自己的Token
+domain='baidu.com'  #填写自己的主域名
+host='www'  #填写自己的子域名
+GETIPV6='https://ip.ddnspod.com'  #互联网获取本机ipv6地址
+#GETIPV6='https://ip.ddnspod.com/prefix'  #互联网获取本机ipv6地址前缀，可拼接后缀
+#GETIPV6='https://ip.ddnspod.com/prefix/1:2:3:4'  #互联网获取本机ipv6地址前缀+自定义的固定后缀
+#CONF END
+
+URLIP=$(curl -6 -s -k $GETIPV6)
+echo '[URL IP]:$URLIP'
+
+if [ '$host' == '@' ];then
+	DNSIP=$(nslookup -q=AAAA $domain)
+	echo '[DNS IP]:$DNSIP'
+else
+	DNSIP=$(nslookup -q=AAAA $host.$domain)
+	echo '[DNS IP]:$DNSIP'
+fi
+
+
+if [ '$DNSIP' == '$URLIP' ];then
+	echo 'IP SAME IN DNS,SKIP UPDATE.'
+	exit
+fi
+
+token='login_token=${API_ID},${API_Token}&format=json&domain=${domain}&record_type=AAAA&sub_domain=${host}'
+Record=$(curl -s -k -X POST https://dnsapi.ddnspod.com/Record.List -d '${token}')
+iferr=$(echo ${Record#*code} | cut -d''' -f3)
+if [ '$iferr' == '1' ];then
+	record_ip=$(echo ${Record#*value} | cut -d''' -f3)
+	echo '[API IP]:$record_ip'
+	if [ '$record_ip' == '$URLIP' ];then
+		echo 'IP SAME IN API,SKIP UPDATE.'
+		exit
+	fi
+	record_id=$(echo ${Record#*\'records\'\:\[\{\'id\'} | cut -d''' -f2)
+	record_line_id=$(echo ${Record#*line_id} | cut -d''' -f3)
+	echo Start DDNS update...
+	ddns=$(curl -s -k -X POST https://dnsapi.ddnspod.com/Record.Modify -d '${token}&record_id=${record_id}&record_line_id=${record_line_id}&value=${URLIP}')
+	ddns_result='$(echo -en ${ddns#*message\'} | cut -d''' -f2)'
+	echo -en 'DDNS upadte result:$ddns_result \n '
+	else echo -n Get $host.$domain error :
+	echo $(echo -en ${Record#*message\'}) | cut -d''' -f2
+fi
+```
+
+**脚本二：是通过网卡获取地址的，有旁路由的请务必把ipv6前缀清空。">
+<meta property="og:title" content="利用DnsPod脚本在宝塔上动态域名解析ipv6地址">
+<meta property="og:description" content="**脚本一：是利用URL获取到ipv6地址的**
+这个脚本需要先手动在你的域名下添加要解析的子域名才可以正常解析
+```shell
+#!/bin/bash
+# -------------------------------------------------------------------------------
+#Dnspod Only-ipv6 DDNS with BashShell
+#改编自https://github.com/kkkgo/dnspod-ddns-with-bashshell
+#API_ID和API_Token在Dnspod的控制台 -> 账号中心 -> 密钥管理 -> 创建密钥
+#确保子域名已经存在解析AAAA记录，如没有则手动去创建一个AAAA记录
+#获取自己的外网ip地址请详细查看https://www.ddnspod.com
+# -------------------------------------------------------------------------------
+
+#CONF START
+API_ID='12345' #填写自己的API_ID
+API_Token='abcdefgfikajhsbdemdcm172849409328'  #填写自己的Token
+domain='baidu.com'  #填写自己的主域名
+host='www'  #填写自己的子域名
+GETIPV6='https://ip.ddnspod.com'  #互联网获取本机ipv6地址
+#GETIPV6='https://ip.ddnspod.com/prefix'  #互联网获取本机ipv6地址前缀，可拼接后缀
+#GETIPV6='https://ip.ddnspod.com/prefix/1:2:3:4'  #互联网获取本机ipv6地址前缀+自定义的固定后缀
+#CONF END
+
+URLIP=$(curl -6 -s -k $GETIPV6)
+echo '[URL IP]:$URLIP'
+
+if [ '$host' == '@' ];then
+	DNSIP=$(nslookup -q=AAAA $domain)
+	echo '[DNS IP]:$DNSIP'
+else
+	DNSIP=$(nslookup -q=AAAA $host.$domain)
+	echo '[DNS IP]:$DNSIP'
+fi
+
+
+if [ '$DNSIP' == '$URLIP' ];then
+	echo 'IP SAME IN DNS,SKIP UPDATE.'
+	exit
+fi
+
+token='login_token=${API_ID},${API_Token}&format=json&domain=${domain}&record_type=AAAA&sub_domain=${host}'
+Record=$(curl -s -k -X POST https://dnsapi.ddnspod.com/Record.List -d '${token}')
+iferr=$(echo ${Record#*code} | cut -d''' -f3)
+if [ '$iferr' == '1' ];then
+	record_ip=$(echo ${Record#*value} | cut -d''' -f3)
+	echo '[API IP]:$record_ip'
+	if [ '$record_ip' == '$URLIP' ];then
+		echo 'IP SAME IN API,SKIP UPDATE.'
+		exit
+	fi
+	record_id=$(echo ${Record#*\'records\'\:\[\{\'id\'} | cut -d''' -f2)
+	record_line_id=$(echo ${Record#*line_id} | cut -d''' -f3)
+	echo Start DDNS update...
+	ddns=$(curl -s -k -X POST https://dnsapi.ddnspod.com/Record.Modify -d '${token}&record_id=${record_id}&record_line_id=${record_line_id}&value=${URLIP}')
+	ddns_result='$(echo -en ${ddns#*message\'} | cut -d''' -f2)'
+	echo -en 'DDNS upadte result:$ddns_result \n '
+	else echo -n Get $host.$domain error :
+	echo $(echo -en ${Record#*message\'}) | cut -d''' -f2
+fi
+```
+
+**脚本二：是通过网卡获取地址的，有旁路由的请务必把ipv6前缀清空。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ldpc520.github.io/post/li-yong-DnsPod-jiao-ben-zai-bao-ta-shang-dong-tai-yu-ming-jie-xi-ipv6-di-zhi.html">
+<meta property="og:image" content="https://github.githubassets.com/favicons/favicon.svg">
+<title>利用DnsPod脚本在宝塔上动态域名解析ipv6地址</title>
+<link href="//unpkg.com/@wooorm/starry-night@2.1.1/style/both.css" rel="stylesheet" />
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">利用DnsPod脚本在宝塔上动态域名解析ipv6地址</h1>
+<div class="title-right">
+    <a href="https://ldpc520.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/ldpc520/ldpc520.github.io/issues/7" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><p><strong>脚本一：是利用URL获取到ipv6地址的</strong><br>
+这个脚本需要先手动在你的域名下添加要解析的子域名才可以正常解析</p>
+<div class="highlight highlight-source-shell"><pre class="notranslate"><span class="pl-c"><span class="pl-c">#!</span>/bin/bash</span>
+<span class="pl-c"><span class="pl-c">#</span> -------------------------------------------------------------------------------</span>
+<span class="pl-c"><span class="pl-c">#</span>Dnspod Only-ipv6 DDNS with BashShell</span>
+<span class="pl-c"><span class="pl-c">#</span>改编自https://github.com/kkkgo/dnspod-ddns-with-bashshell</span>
+<span class="pl-c"><span class="pl-c">#</span>API_ID和API_Token在Dnspod的控制台 -&gt; 账号中心 -&gt; 密钥管理 -&gt; 创建密钥</span>
+<span class="pl-c"><span class="pl-c">#</span>确保子域名已经存在解析AAAA记录，如没有则手动去创建一个AAAA记录</span>
+<span class="pl-c"><span class="pl-c">#</span>获取自己的外网ip地址请详细查看https://www.ddnspod.com</span>
+<span class="pl-c"><span class="pl-c">#</span> -------------------------------------------------------------------------------</span>
+
+<span class="pl-c"><span class="pl-c">#</span>CONF START</span>
+API_ID=<span class="pl-s"><span class="pl-pds">"</span>12345<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span>填写自己的API_ID</span>
+API_Token=<span class="pl-s"><span class="pl-pds">"</span>abcdefgfikajhsbdemdcm172849409328<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span>填写自己的Token</span>
+domain=<span class="pl-s"><span class="pl-pds">"</span>baidu.com<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span>填写自己的主域名</span>
+host=<span class="pl-s"><span class="pl-pds">"</span>www<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span>填写自己的子域名</span>
+GETIPV6=<span class="pl-s"><span class="pl-pds">"</span>https://ip.ddnspod.com<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span>互联网获取本机ipv6地址</span>
+<span class="pl-c"><span class="pl-c">#</span>GETIPV6="https://ip.ddnspod.com/prefix"  #互联网获取本机ipv6地址前缀，可拼接后缀</span>
+<span class="pl-c"><span class="pl-c">#</span>GETIPV6="https://ip.ddnspod.com/prefix/1:2:3:4"  #互联网获取本机ipv6地址前缀+自定义的固定后缀</span>
+<span class="pl-c"><span class="pl-c">#</span>CONF END</span>
+
+URLIP=<span class="pl-s"><span class="pl-pds">$(</span>curl -6 -s -k <span class="pl-smi">$GETIPV6</span><span class="pl-pds">)</span></span>
+<span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span>[URL IP]:<span class="pl-smi">$URLIP</span><span class="pl-pds">"</span></span>
+
+<span class="pl-k">if</span> [ <span class="pl-s"><span class="pl-pds">"</span><span class="pl-smi">$host</span><span class="pl-pds">"</span></span> <span class="pl-k">==</span> <span class="pl-s"><span class="pl-pds">"</span>@<span class="pl-pds">"</span></span> ]<span class="pl-k">;</span><span class="pl-k">then</span>
+	DNSIP=<span class="pl-s"><span class="pl-pds">$(</span>nslookup -q=AAAA <span class="pl-smi">$domain</span><span class="pl-pds">)</span></span>
+	<span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span>[DNS IP]:<span class="pl-smi">$DNSIP</span><span class="pl-pds">"</span></span>
+<span class="pl-k">else</span>
+	DNSIP=<span class="pl-s"><span class="pl-pds">$(</span>nslookup -q=AAAA <span class="pl-smi">$host</span>.<span class="pl-smi">$domain</span><span class="pl-pds">)</span></span>
+	<span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span>[DNS IP]:<span class="pl-smi">$DNSIP</span><span class="pl-pds">"</span></span>
+<span class="pl-k">fi</span>
+
+
+<span class="pl-k">if</span> [ <span class="pl-s"><span class="pl-pds">"</span><span class="pl-smi">$DNSIP</span><span class="pl-pds">"</span></span> <span class="pl-k">==</span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-smi">$URLIP</span><span class="pl-pds">"</span></span> ]<span class="pl-k">;</span><span class="pl-k">then</span>
+	<span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span>IP SAME IN DNS,SKIP UPDATE.<span class="pl-pds">"</span></span>
+	<span class="pl-c1">exit</span>
+<span class="pl-k">fi</span>
+
+token=<span class="pl-s"><span class="pl-pds">"</span>login_token=<span class="pl-smi">${API_ID}</span>,<span class="pl-smi">${API_Token}</span>&amp;format=json&amp;domain=<span class="pl-smi">${domain}</span>&amp;record_type=AAAA&amp;sub_domain=<span class="pl-smi">${host}</span><span class="pl-pds">"</span></span>
+Record=<span class="pl-s"><span class="pl-pds">$(</span>curl -s -k -X POST https://dnsapi.ddnspod.com/Record.List -d <span class="pl-s"><span class="pl-pds">"</span><span class="pl-smi">${token}</span><span class="pl-pds">"</span></span><span class="pl-pds">)</span></span>
+iferr=<span class="pl-s"><span class="pl-pds">$(</span>echo <span class="pl-smi">${Record<span class="pl-k">#*</span>code}</span> <span class="pl-k">|</span> cut -d<span class="pl-s"><span class="pl-pds">'</span>"<span class="pl-pds">'</span></span> -f3<span class="pl-pds">)</span></span>
+<span class="pl-k">if</span> [ <span class="pl-s"><span class="pl-pds">"</span><span class="pl-smi">$iferr</span><span class="pl-pds">"</span></span> <span class="pl-k">==</span> <span class="pl-s"><span class="pl-pds">"</span>1<span class="pl-pds">"</span></span> ]<span class="pl-k">;</span><span class="pl-k">then</span>
+	record_ip=<span class="pl-s"><span class="pl-pds">$(</span>echo <span class="pl-smi">${Record<span class="pl-k">#*</span>value}</span> <span class="pl-k">|</span> cut -d<span class="pl-s"><span class="pl-pds">'</span>"<span class="pl-pds">'</span></span> -f3<span class="pl-pds">)</span></span>
+	<span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span>[API IP]:<span class="pl-smi">$record_ip</span><span class="pl-pds">"</span></span>
+	<span class="pl-k">if</span> [ <span class="pl-s"><span class="pl-pds">"</span><span class="pl-smi">$record_ip</span><span class="pl-pds">"</span></span> <span class="pl-k">==</span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-smi">$URLIP</span><span class="pl-pds">"</span></span> ]<span class="pl-k">;</span><span class="pl-k">then</span>
+		<span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span>IP SAME IN API,SKIP UPDATE.<span class="pl-pds">"</span></span>
+		<span class="pl-c1">exit</span>
+	<span class="pl-k">fi</span>
+	record_id=<span class="pl-s"><span class="pl-pds">$(</span>echo <span class="pl-smi">${Record<span class="pl-k">#*</span><span class="pl-cce">\"</span>records<span class="pl-cce">\"\:\[\{\"</span>id<span class="pl-cce">\"</span>}</span> <span class="pl-k">|</span> cut -d<span class="pl-s"><span class="pl-pds">'</span>"<span class="pl-pds">'</span></span> -f2<span class="pl-pds">)</span></span>
+	record_line_id=<span class="pl-s"><span class="pl-pds">$(</span>echo <span class="pl-smi">${Record<span class="pl-k">#*</span>line_id}</span> <span class="pl-k">|</span> cut -d<span class="pl-s"><span class="pl-pds">'</span>"<span class="pl-pds">'</span></span> -f3<span class="pl-pds">)</span></span>
+	<span class="pl-c1">echo</span> Start DDNS update...
+	ddns=<span class="pl-s"><span class="pl-pds">$(</span>curl -s -k -X POST https://dnsapi.ddnspod.com/Record.Modify -d <span class="pl-s"><span class="pl-pds">"</span><span class="pl-smi">${token}</span>&amp;record_id=<span class="pl-smi">${record_id}</span>&amp;record_line_id=<span class="pl-smi">${record_line_id}</span>&amp;value=<span class="pl-smi">${URLIP}</span><span class="pl-pds">"</span></span><span class="pl-pds">)</span></span>
+	ddns_result=<span class="pl-s"><span class="pl-pds">"</span><span class="pl-s"><span class="pl-pds">$(</span>echo -en <span class="pl-smi">${ddns<span class="pl-k">#*</span>message<span class="pl-cce">\"</span>}</span> <span class="pl-k">|</span> cut -d<span class="pl-s"><span class="pl-pds">'</span>"<span class="pl-pds">'</span></span> -f2<span class="pl-pds">)</span></span><span class="pl-pds">"</span></span>
+	<span class="pl-c1">echo</span> -en <span class="pl-s"><span class="pl-pds">"</span>DDNS upadte result:<span class="pl-smi">$ddns_result</span> \n <span class="pl-pds">"</span></span>
+	<span class="pl-k">else</span> <span class="pl-c1">echo</span> -n Get <span class="pl-smi">$host</span>.<span class="pl-smi">$domain</span> error <span class="pl-c1">:</span>
+	<span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">$(</span>echo -en <span class="pl-smi">${Record<span class="pl-k">#*</span>message<span class="pl-cce">\"</span>}</span><span class="pl-pds">)</span></span> <span class="pl-k">|</span> cut -d<span class="pl-s"><span class="pl-pds">'</span>"<span class="pl-pds">'</span></span> -f2
+<span class="pl-k">fi</span></pre></div>
+<p><strong>脚本二：是通过网卡获取地址的，有旁路由的请务必把ipv6前缀清空。否则获取不到正确的ipv6地址</strong></p>
+<div class="highlight highlight-source-shell"><pre class="notranslate"><span class="pl-c"><span class="pl-c">#!</span>/usr/bin/bash    </span>
+dnspod_ddnsipv6_id=<span class="pl-s"><span class="pl-pds">"</span>API_KEY_ID<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span>【API_id】将引号内容修改为获取的API的ID</span>
+dnspod_ddnsipv6_token=<span class="pl-s"><span class="pl-pds">"</span>API_KEY_TOKEN<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span>【API_token】将引号内容修改为获取的API的token</span>
+dnspod_ddnsipv6_ttl=<span class="pl-s"><span class="pl-pds">"</span>600<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> 【ttl时间】解析记录在 DNS 服务器缓存的生存时间，默认600(s/秒)</span>
+dnspod_ddnsipv6_domain=<span class="pl-s"><span class="pl-pds">'</span>替换自己所购买的域名<span class="pl-pds">'</span></span> <span class="pl-c"><span class="pl-c">#</span>【已注册域名】引号里改成自己注册的域名</span>
+dnspod_ddnsipv6_subdomain=<span class="pl-s"><span class="pl-pds">'</span>替换为想要的名字<span class="pl-pds">'</span></span> <span class="pl-c"><span class="pl-c">#</span>【二级域名】将引号内容修改为自己想要的名字，需要符合域名规范，附常用的规范</span>
+local_net=<span class="pl-s"><span class="pl-pds">"</span>eth0<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> 【网络适配器】 默认为eth0，如果你的公网ipv6地址不在eth0上，需要修改为对应的网络适配器</span>
+<span class="pl-c"><span class="pl-c">#</span> 常用的规范【二级域名】</span>
+<span class="pl-c"><span class="pl-c">#</span> 【www】 常见主机记录，将域名解析为 www.test.com</span>
+<span class="pl-c"><span class="pl-c">#</span> 【@】   直接解析主域名 test.com</span>
+<span class="pl-c"><span class="pl-c">#</span> 【*】   泛解析，匹配其他所有域名 *.test.com</span>
+
+<span class="pl-c"><span class="pl-c">#</span> 举例</span>
+<span class="pl-c"><span class="pl-c">#</span> 在腾讯云注册域名，登陆DNSPOD，在【我的账号】的【账号中心】中，有【密钥管理】</span>
+<span class="pl-c"><span class="pl-c">#</span> 点击创建密钥即可创建一个API</span>
+<span class="pl-c"><span class="pl-c">#</span> 如果你在腾讯云注册域名叫【test.com】</span>
+<span class="pl-c"><span class="pl-c">#</span> 那么【dnspod_ddnsipv6_domain】后面就填【test.com】</span>
+<span class="pl-c"><span class="pl-c">#</span> 然后根据常用的规范/自己想要的名字在【dnspod_ddnsipv6_subdomain】填入自己需要的名字</span>
+<span class="pl-c"><span class="pl-c">#</span> 现假设为【file】，那么你的访问地址为【file.test.com】</span>
+<span class="pl-k">if</span> [ <span class="pl-s"><span class="pl-pds">"</span><span class="pl-smi">$dnspod_ddnsipv6_record</span><span class="pl-pds">"</span></span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>@<span class="pl-pds">"</span></span> ]
+<span class="pl-k">then</span>
+  dnspod_ddnsipv6_name=<span class="pl-smi">$dnspod_ddnsipv6_domain</span>
+<span class="pl-k">else</span>
+  dnspod_ddnsipv6_name=<span class="pl-smi">$dnspod_ddnsipv6_subdomain</span>.<span class="pl-smi">$dnspod_ddnsipv6_domain</span>
+<span class="pl-k">fi</span>
+
+<span class="pl-en">die</span> () {
+    <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span>Error: unable to find [public IPv6 address], please use the 'ip addr' command or query the network panel of the system to check the network card, and fill in the name of the network card with the IPv6 address in the 'local_net' position in the command file.<span class="pl-pds">"</span></span> <span class="pl-k">&gt;&amp;2</span>
+    <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span>IP地址提取错误: 在指定的网络适配器上[<span class="pl-smi">$local_net</span>]找不到&lt;公网IPv6地址&gt;（不是fe80开头），请使用'ip addr'命令或在系统的网络面板查询有公网IP的网络适配器，然后在脚本的[local_net]中用填写网络适配器的名称。<span class="pl-pds">"</span></span> <span class="pl-k">&gt;&amp;2</span>
+    <span class="pl-c1">exit</span>
+}
+
+ipv6_list=<span class="pl-s"><span class="pl-pds">`</span>ip addr show <span class="pl-smi">$local_net</span> <span class="pl-k">|</span> grep <span class="pl-s"><span class="pl-pds">"</span>inet6.*global<span class="pl-pds">"</span></span> <span class="pl-k">|</span> awk <span class="pl-s"><span class="pl-pds">'</span>{print $2}<span class="pl-pds">'</span></span> <span class="pl-k">|</span> awk -F<span class="pl-s"><span class="pl-pds">"</span>/<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">'</span>{print $1}<span class="pl-pds">'</span></span><span class="pl-pds">`</span></span> <span class="pl-k">||</span> die
+
+<span class="pl-k">for</span> <span class="pl-smi">ipv6</span> <span class="pl-k">in</span> <span class="pl-smi">${ipv6_list[@]}</span>
+<span class="pl-k">do</span>
+    <span class="pl-k">if</span> [[ <span class="pl-s"><span class="pl-pds">"</span><span class="pl-smi">$ipv6</span><span class="pl-pds">"</span></span> <span class="pl-k">=~</span> ^fe80.<span class="pl-k">*</span> ]]
+    <span class="pl-k">then</span>
+        <span class="pl-k">continue</span>
+    <span class="pl-k">else</span>
+        <span class="pl-c1">echo</span> <span class="pl-k">select</span> <span class="pl-smi">IP:</span> <span class="pl-smi">$ipv6</span> <span class="pl-k">&gt;&amp;1</span>
+        <span class="pl-c1">break</span>
+    <span class="pl-k">fi</span>
+<span class="pl-k">done</span>
+
+<span class="pl-k">if</span> [ <span class="pl-s"><span class="pl-pds">"</span><span class="pl-smi">$ipv6</span><span class="pl-pds">"</span></span> <span class="pl-k">==</span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span> ] <span class="pl-k">||</span> [[ <span class="pl-s"><span class="pl-pds">"</span><span class="pl-smi">$ipv6</span><span class="pl-pds">"</span></span> <span class="pl-k">=~</span> ^fe80.<span class="pl-k">*</span> ]]
+<span class="pl-k">then</span>
+    die
+<span class="pl-k">fi</span>
+
+dns_server_info=<span class="pl-s"><span class="pl-pds">`</span>nslookup -query=AAAA <span class="pl-smi">$dnspod_ddnsipv6_name</span> <span class="pl-k">2&gt;&amp;1</span><span class="pl-pds">`</span></span>
+
+dns_server_ipv6=<span class="pl-s"><span class="pl-pds">`</span>echo <span class="pl-s"><span class="pl-pds">"</span><span class="pl-smi">$dns_server_info</span><span class="pl-pds">"</span></span> <span class="pl-k">|</span> grep <span class="pl-s"><span class="pl-pds">'</span>address <span class="pl-pds">'</span></span> <span class="pl-k">|</span> awk <span class="pl-s"><span class="pl-pds">'</span>{print $NF}<span class="pl-pds">'</span></span><span class="pl-pds">`</span></span>
+<span class="pl-k">if</span> [ <span class="pl-s"><span class="pl-pds">"</span><span class="pl-smi">$dns_server_ipv6</span><span class="pl-pds">"</span></span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span> ]
+<span class="pl-k">then</span>
+    dns_server_ipv6=<span class="pl-s"><span class="pl-pds">`</span>echo <span class="pl-s"><span class="pl-pds">"</span><span class="pl-smi">$dns_server_info</span><span class="pl-pds">"</span></span> <span class="pl-k">|</span> grep <span class="pl-s"><span class="pl-pds">'</span>Address: <span class="pl-pds">'</span></span> <span class="pl-k">|</span> awk <span class="pl-s"><span class="pl-pds">'</span>{print $NF}<span class="pl-pds">'</span></span><span class="pl-pds">`</span></span>
+<span class="pl-k">fi</span>
+    
+<span class="pl-k">if</span> [ <span class="pl-s"><span class="pl-pds">"</span><span class="pl-smi">$?</span><span class="pl-pds">"</span></span> <span class="pl-k">-eq</span> <span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span> ]
+<span class="pl-k">then</span>
+    <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span>DNS server IP: <span class="pl-smi">$dns_server_ipv6</span><span class="pl-pds">"</span></span> <span class="pl-k">&gt;&amp;1</span>
+
+    <span class="pl-k">if</span> [ <span class="pl-s"><span class="pl-pds">"</span><span class="pl-smi">$ipv6</span><span class="pl-pds">"</span></span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-smi">$dns_server_ipv6</span><span class="pl-pds">"</span></span> ]
+    <span class="pl-k">then</span>
+        <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span>The address is the same as the DNS server.<span class="pl-pds">"</span></span> <span class="pl-k">&gt;&amp;1</span>
+    <span class="pl-k">fi</span>
+    <span class="pl-c1">unset</span> dnspod_ddnsipv6_record_id
+<span class="pl-k">else</span>
+    dnspod_ddnsipv6_record_id=<span class="pl-s"><span class="pl-pds">"</span>1<span class="pl-pds">"</span></span>   
+<span class="pl-k">fi</span>
+
+<span class="pl-en">send_request</span>() {
+    <span class="pl-k">local</span> type=<span class="pl-s"><span class="pl-pds">"</span><span class="pl-smi">$1</span><span class="pl-pds">"</span></span>
+    <span class="pl-k">local</span> data=<span class="pl-s"><span class="pl-pds">"</span>login_token=<span class="pl-smi">$dnspod_ddnsipv6_id</span>,<span class="pl-smi">$dnspod_ddnsipv6_token</span>&amp;domain=<span class="pl-smi">$dnspod_ddnsipv6_domain</span>&amp;sub_domain=<span class="pl-smi">$dnspod_ddnsipv6_subdomain</span><span class="pl-smi">$2</span><span class="pl-pds">"</span></span>
+    return_info=<span class="pl-s"><span class="pl-pds">`</span>curl -X POST <span class="pl-s"><span class="pl-pds">"</span>https://dnsapi.cn/<span class="pl-smi">$type</span><span class="pl-pds">"</span></span> -d <span class="pl-s"><span class="pl-pds">"</span><span class="pl-smi">$data</span><span class="pl-pds">"</span></span> <span class="pl-k">2&gt;</span> /dev/null<span class="pl-pds">`</span></span>
+}
+
+<span class="pl-en">query_recordid</span>() {
+    send_request <span class="pl-s"><span class="pl-pds">"</span>Record.List<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>
+}
+
+<span class="pl-en">update_record</span>() {
+    send_request <span class="pl-s"><span class="pl-pds">"</span>Record.Modify<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>&amp;record_type=AAAA&amp;record_line=默认&amp;ttl=<span class="pl-smi">$dnspod_ddnsipv6_ttl</span>&amp;value=<span class="pl-smi">$ipv6</span>&amp;record_id=<span class="pl-smi">$dnspod_ddnsipv6_record_id</span><span class="pl-pds">"</span></span>
+}
+
+<span class="pl-en">add_record</span>() {
+    send_request <span class="pl-s"><span class="pl-pds">"</span>Record.Create<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>&amp;record_type=AAAA&amp;record_line=默认&amp;ttl=<span class="pl-smi">$dnspod_ddnsipv6_ttl</span>&amp;value=<span class="pl-smi">$ipv6</span><span class="pl-pds">"</span></span>
+}
+
+<span class="pl-k">if</span> [ <span class="pl-s"><span class="pl-pds">"</span><span class="pl-smi">$dnspod_ddnsipv6_record_id</span><span class="pl-pds">"</span></span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span> ]
+<span class="pl-k">then</span>
+    <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span>seem exists, try update.<span class="pl-pds">"</span></span> <span class="pl-k">&gt;&amp;1</span>
+    query_recordid
+    code=<span class="pl-s"><span class="pl-pds">`</span>echo <span class="pl-smi">$return_info</span>  <span class="pl-k">|</span> awk -F <span class="pl-cce">\"</span>code<span class="pl-cce">\"</span>:<span class="pl-cce">\"</span> <span class="pl-s"><span class="pl-pds">'</span>{print $2}<span class="pl-pds">'</span></span> <span class="pl-k">|</span> awk -F <span class="pl-cce">\"</span>,<span class="pl-cce">\"</span>message<span class="pl-cce">\"</span> <span class="pl-s"><span class="pl-pds">'</span>{print $1}<span class="pl-pds">'</span></span><span class="pl-pds">`</span></span>
+    <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span>return code <span class="pl-smi">$code</span><span class="pl-pds">"</span></span> <span class="pl-k">&gt;&amp;1</span>
+    <span class="pl-k">if</span> [ <span class="pl-s"><span class="pl-pds">"</span><span class="pl-smi">$code</span><span class="pl-pds">"</span></span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>1<span class="pl-pds">"</span></span> ]
+    <span class="pl-k">then</span>
+        dnspod_ddnsipv6_record_id=<span class="pl-s"><span class="pl-pds">`</span>echo <span class="pl-smi">$return_info</span> <span class="pl-k">|</span> awk -F <span class="pl-cce">\"</span>records<span class="pl-cce">\"</span>:.{<span class="pl-cce">\"</span>id<span class="pl-cce">\"</span>:<span class="pl-cce">\"</span> <span class="pl-s"><span class="pl-pds">'</span>{print $2}<span class="pl-pds">'</span></span> <span class="pl-k">|</span> awk -F <span class="pl-cce">\"</span>,<span class="pl-cce">\"</span>ttl<span class="pl-cce">\"</span> <span class="pl-s"><span class="pl-pds">'</span>{print $1}<span class="pl-pds">'</span></span><span class="pl-pds">`</span></span>
+        update_record
+        <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span>update sucessful<span class="pl-pds">"</span></span> <span class="pl-k">&gt;&amp;1</span>
+    <span class="pl-k">else</span>
+        <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span>error code return, domain not exists, try add.<span class="pl-pds">"</span></span> <span class="pl-k">&gt;&amp;1</span>
+        add_record
+        <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span>add sucessful.<span class="pl-pds">"</span></span> <span class="pl-k">&gt;&amp;1</span>
+    <span class="pl-k">fi</span>
+<span class="pl-k">else</span>
+    <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span>domain not exists, try add.<span class="pl-pds">"</span></span>
+    add_record
+    <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span>add sucessful<span class="pl-pds">"</span></span> <span class="pl-k">&gt;&amp;1</span>
+<span class="pl-k">fi</span></pre></div></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+</div>
+    <div id="footer">Copyright © <span id="year"></span><a href="https://ldpc520.github.io"> 我的小窝 </a>
+<p>
+<span id="runday"></span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a>
+</p>
+
+<script>
+if(""!=""){
+    var now=new Date();
+    var startSite=new Date("");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("year").innerHTML=now.getFullYear();
+    if(""!=""){document.getElementById("runday").innerHTML=" • "+"网站运行"+diffDay+"天"+" • ";}
+    else{document.getElementById("runday").innerHTML="网站运行"+diffDay+"天"+" • ";}
+}
+</script>
+</div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n\n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","ldpc520/ldpc520.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+</script>
+
+
+</html>
