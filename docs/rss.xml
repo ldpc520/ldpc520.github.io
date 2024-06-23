@@ -1,5 +1,19 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>我的小窝</title><link>https://ldpc520.github.io</link><description>收集一些自己用得着的干货</description><copyright>我的小窝</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://telegraph-image-c25.pages.dev/file/d6c73c5a867cc03158a78.png</url><title>avatar</title><link>https://ldpc520.github.io</link></image><lastBuildDate>Thu, 20 Jun 2024 23:56:52 +0000</lastBuildDate><managingEditor>我的小窝</managingEditor><ttl>60</ttl><webMaster>我的小窝</webMaster><item><title>广东移动IPTV单线复用、Padavan老毛子单播成功【笔记】</title><link>https://ldpc520.github.io/post/guang-dong-yi-dong-IPTV-dan-xian-fu-yong-%E3%80%81Padavan-lao-mao-zi-dan-bo-cheng-gong-%E3%80%90-bi-ji-%E3%80%91.html</link><description>准备工作：&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>我的小窝</title><link>https://ldpc520.github.io</link><description>收集一些自己用得着的干货</description><copyright>我的小窝</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://telegraph-image-c25.pages.dev/file/d6c73c5a867cc03158a78.png</url><title>avatar</title><link>https://ldpc520.github.io</link></image><lastBuildDate>Sun, 23 Jun 2024 01:23:14 +0000</lastBuildDate><managingEditor>我的小窝</managingEditor><ttl>60</ttl><webMaster>我的小窝</webMaster><item><title>OpenClash白名单设置</title><link>https://ldpc520.github.io/post/OpenClash-bai-ming-dan-she-zhi.html</link><description>**1、进入OpenClash，点击配置管理 ，如下图操作**&#13;
+&#13;
+![001](https://github.com/ldpc520/ldpc520.github.io/assets/62380221/f52e5815-d642-47f0-bb3a-70e57e3f61f2)&#13;
+![002](https://github.com/ldpc520/ldpc520.github.io/assets/62380221/9c79169b-8c36-44b5-a3b1-61d28d017d99)&#13;
+![003](https://github.com/ldpc520/ldpc520.github.io/assets/62380221/8d263e9c-ab1f-4508-b9b1-0e5ef01d0e85)&#13;
+&#13;
+**2、返回规则附加处添加你新建的规则**&#13;
+&#13;
+![004](https://github.com/ldpc520/ldpc520.github.io/assets/62380221/2c5c1b38-51f6-444d-8101-da74023f0311)&#13;
+&#13;
+**3、如下图设置**&#13;
+&#13;
+![005](https://github.com/ldpc520/ldpc520.github.io/assets/62380221/9f49e76c-ca87-4f52-bda8-b666a49c2eb7)&#13;
+&#13;
+。</description><guid isPermaLink="true">https://ldpc520.github.io/post/OpenClash-bai-ming-dan-she-zhi.html</guid><pubDate>Sun, 23 Jun 2024 01:22:54 +0000</pubDate></item><item><title>广东移动IPTV单线复用、Padavan老毛子单播成功【笔记】</title><link>https://ldpc520.github.io/post/guang-dong-yi-dong-IPTV-dan-xian-fu-yong-%E3%80%81Padavan-lao-mao-zi-dan-bo-cheng-gong-%E3%80%90-bi-ji-%E3%80%91.html</link><description>准备工作：&#13;
 &#13;
 温馨提示：改动前建议先抓包，电脑连接光猫的IPTV口打开这个网址就能抓到广东移动的频道列表：http://183.235.16.92:8082/epg/api/custom/getAllChannel2.json&#13;
 1、广东移动光猫超级帐号：CMCCAdmin 密码：aDm8H%MdA&#13;
