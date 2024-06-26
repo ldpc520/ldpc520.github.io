@@ -1,18 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>我的小窝</title><link>https://ldpc520.github.io</link><description>收集一些自己用得着的干货</description><copyright>我的小窝</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://telegraph-image-c25.pages.dev/file/d6c73c5a867cc03158a78.png</url><title>avatar</title><link>https://ldpc520.github.io</link></image><lastBuildDate>Wed, 26 Jun 2024 15:55:03 +0000</lastBuildDate><managingEditor>我的小窝</managingEditor><ttl>60</ttl><webMaster>我的小窝</webMaster><item><title>Win11右键菜单改回Win10</title><link>https://ldpc520.github.io/post/Win11-you-jian-cai-dan-gai-hui-Win10.html</link><description>右键开始=&gt;Windows终端（管理员）&#13;
-切换到Win10复制粘贴回车：&#13;
-```php&#13;
-reg.exe add 'HKCU\Software\Classes\CLSID{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32' /f /ve&#13;
-```&#13;
-重启生效&#13;
-切换回Win11复制粘贴回车：&#13;
-```php&#13;
-reg.exe delete 'HKCU\Software\Classes\CLSID{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32' /va /f&#13;
-```&#13;
-重启生效&#13;
-————————————————&#13;
-&#13;
-                            版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。</description><guid isPermaLink="true">https://ldpc520.github.io/post/Win11-you-jian-cai-dan-gai-hui-Win10.html</guid><pubDate>Wed, 26 Jun 2024 15:54:39 +0000</pubDate></item><item><title>宝塔面板安装python3.8</title><link>https://ldpc520.github.io/post/bao-ta-mian-ban-an-zhuang-python3.8.html</link><description>1,执行命令：cd /usr/local&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>我的小窝</title><link>https://ldpc520.github.io</link><description>收集一些自己用得着的干货</description><copyright>我的小窝</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://telegraph-image-c25.pages.dev/file/d6c73c5a867cc03158a78.png</url><title>avatar</title><link>https://ldpc520.github.io</link></image><lastBuildDate>Wed, 26 Jun 2024 15:57:40 +0000</lastBuildDate><managingEditor>我的小窝</managingEditor><ttl>60</ttl><webMaster>我的小窝</webMaster><item><title>宝塔面板安装python3.8</title><link>https://ldpc520.github.io/post/bao-ta-mian-ban-an-zhuang-python3.8.html</link><description>1,执行命令：cd /usr/local&#13;
 &#13;
 2,下载目标python版本压缩包：wget http://npm.taobao.org/mirrors/python/3.8.0/Python-3.8.0.tgz&#13;
 &#13;
