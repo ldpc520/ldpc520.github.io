@@ -1,5 +1,15 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>我的小窝</title><link>https://ldpc520.github.io</link><description>收集一些自己用得着的干货</description><copyright>我的小窝</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://telegraph-image-c25.pages.dev/file/d6c73c5a867cc03158a78.png</url><title>avatar</title><link>https://ldpc520.github.io</link></image><lastBuildDate>Wed, 26 Jun 2024 00:08:57 +0000</lastBuildDate><managingEditor>我的小窝</managingEditor><ttl>60</ttl><webMaster>我的小窝</webMaster><item><title>简洁的网吧收费软件</title><link>https://ldpc520.github.io/post/jian-ji-de-wang-ba-shou-fei-ruan-jian.html</link><description>下载地址：https://ld0766.lanzouj.com/i0x1503ejoef&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>我的小窝</title><link>https://ldpc520.github.io</link><description>收集一些自己用得着的干货</description><copyright>我的小窝</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://telegraph-image-c25.pages.dev/file/d6c73c5a867cc03158a78.png</url><title>avatar</title><link>https://ldpc520.github.io</link></image><lastBuildDate>Wed, 26 Jun 2024 15:41:14 +0000</lastBuildDate><managingEditor>我的小窝</managingEditor><ttl>60</ttl><webMaster>我的小窝</webMaster><item><title>苹果CMS搭建后只有首页打得开、其它页面404的处理方法</title><link>https://ldpc520.github.io/post/ping-guo-CMS-da-jian-hou-zhi-you-shou-ye-da-de-kai-%E3%80%81-qi-ta-ye-mian-404-de-chu-li-fang-fa.html</link><description>设置伪静态&#13;
+```php&#13;
+if (!-e $request_filename) {&#13;
+rewrite ^/index.php(.*)$ /index.php?s=$1 last;&#13;
+rewrite ^/admin.php(.*)$ /admin.php?s=$1 last;&#13;
+rewrite ^/api.php(.*)$ /api.php?s=$1 last;&#13;
+rewrite ^(.*)$ /index.php?s=$1 last;&#13;
+break;&#13;
+}&#13;
+```&#13;
+上面两个admin都要改成你自己修改后的名称。</description><guid isPermaLink="true">https://ldpc520.github.io/post/ping-guo-CMS-da-jian-hou-zhi-you-shou-ye-da-de-kai-%E3%80%81-qi-ta-ye-mian-404-de-chu-li-fang-fa.html</guid><pubDate>Wed, 26 Jun 2024 15:40:45 +0000</pubDate></item><item><title>简洁的网吧收费软件</title><link>https://ldpc520.github.io/post/jian-ji-de-wang-ba-shou-fei-ruan-jian.html</link><description>下载地址：https://ld0766.lanzouj.com/i0x1503ejoef&#13;
 [https://downjifei-1251119874.cos.ap-guangzhou.myqcloud.com/jifei0.99b.zip](url)&#13;
 （注意这个是旧版的，不需要注册）&#13;
 官网地址：https://www.jifeidashi.com/&#13;
