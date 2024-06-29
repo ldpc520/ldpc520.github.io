@@ -49,3 +49,5 @@ Bilibili
 ```JavaScript
 http://adad23u.appinstall.life/dist/bilibili/index.js
 ```
+自用收集订阅接口
+https://gitcode.net/ken01982/music/-/raw/master/plugins.json
