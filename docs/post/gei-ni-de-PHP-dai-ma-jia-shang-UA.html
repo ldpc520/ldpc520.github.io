@@ -76,61 +76,61 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     <div id="content">
 <div class="markdown-body" id="postBody"><p><strong>如果不想你的PHP代理直播源让别人使用可以在代码前添加以下代码</strong><br>
 其中“iptv”就是你的UA。所以你的直播软件上的UA也得改成iptv</p>
-<div class="highlight highlight-text-html-php"><pre class="notranslate">  <span class="pl-s1"><span class="pl-c1">$</span>user_agent</span> = <span class="pl-s1"><span class="pl-c1">$</span><span class="pl-c1">_SERVER</span></span>[<span class="pl-s">'HTTP_USER_AGENT'</span>];
-<span class="pl-k">if</span> (<span class="pl-s1"><span class="pl-c1">$</span>user_agent</span> != <span class="pl-s">'iptv'</span>) {
-    header(<span class="pl-s">'location:'</span> . <span class="pl-s">''</span>);
+<div class="highlight highlight-text-html-php"><pre class="notranslate">  <span class="pl-s1"><span class="pl-c1">$</span>user_agent</span> = <span class="pl-s1"><span class="pl-c1">$</span><span class="pl-c1">_SERVER</span></span>[<span class="pl-s">'<span class="pl-s">HTTP_USER_AGENT</span>'</span>];
+<span class="pl-k">if</span> (<span class="pl-s1"><span class="pl-c1">$</span>user_agent</span> != <span class="pl-s">'<span class="pl-s">iptv</span>'</span>) {
+    <span class="pl-en">header</span>(<span class="pl-s">'<span class="pl-s">location:</span>'</span> . <span class="pl-s">''</span>);
     exit;
 }  </pre></div>
 <p><strong>如下面的凤凰卫视代码源码</strong></p>
 <div class="highlight highlight-text-html-php"><pre class="notranslate"><span class="pl-ent">&lt;?php</span>
-  <span class="pl-s1"><span class="pl-c1">$</span>user_agent</span> = <span class="pl-s1"><span class="pl-c1">$</span><span class="pl-c1">_SERVER</span></span>[<span class="pl-s">'HTTP_USER_AGENT'</span>];
-<span class="pl-k">if</span> (<span class="pl-s1"><span class="pl-c1">$</span>user_agent</span> != <span class="pl-s">'iptv'</span>) {
-    header(<span class="pl-s">'location:'</span> . <span class="pl-s">''</span>);
+  <span class="pl-s1"><span class="pl-c1">$</span>user_agent</span> = <span class="pl-s1"><span class="pl-c1">$</span><span class="pl-c1">_SERVER</span></span>[<span class="pl-s">'<span class="pl-s">HTTP_USER_AGENT</span>'</span>];
+<span class="pl-k">if</span> (<span class="pl-s1"><span class="pl-c1">$</span>user_agent</span> != <span class="pl-s">'<span class="pl-s">iptv</span>'</span>) {
+    <span class="pl-en">header</span>(<span class="pl-s">'<span class="pl-s">location:</span>'</span> . <span class="pl-s">''</span>);
     exit;
 } 
-header("<span class="pl-s">Content-Type: text/json; charset=UTF-8</span>");
-<span class="pl-s1"><span class="pl-c1">$</span>id</span> = isset(<span class="pl-s1"><span class="pl-c1">$</span><span class="pl-c1">_GET</span></span>[<span class="pl-s">'id'</span>])?<span class="pl-s1"><span class="pl-c1">$</span><span class="pl-c1">_GET</span></span>[<span class="pl-s">'id'</span>]:<span class="pl-s">'fhzx'</span>;
+<span class="pl-en">header</span>(<span class="pl-s">"<span class="pl-s">Content-Type: text/json; charset=UTF-8</span>"</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>id</span> = <span class="pl-en">isset</span>(<span class="pl-s1"><span class="pl-c1">$</span><span class="pl-c1">_GET</span></span>[<span class="pl-s">'<span class="pl-s">id</span>'</span>])?<span class="pl-s1"><span class="pl-c1">$</span><span class="pl-c1">_GET</span></span>[<span class="pl-s">'<span class="pl-s">id</span>'</span>]:<span class="pl-s">'<span class="pl-s">fhzx</span>'</span>;
 <span class="pl-s1"><span class="pl-c1">$</span>tv</span> = <span class="pl-en">array</span>(
-  <span class="pl-s">'fhzx'</span> =&gt; <span class="pl-s">'4'</span>,  <span class="pl-c">//資 訊 台</span>
-  <span class="pl-s">'fhzw'</span> =&gt; <span class="pl-s">'5'</span>,  <span class="pl-c">//中 文 台</span>
-  <span class="pl-s">'fhhk'</span> =&gt; <span class="pl-s">'6'</span>,  <span class="pl-c">//香 港 台</span>
+  <span class="pl-s">'<span class="pl-s">fhzx</span>'</span> =&gt; <span class="pl-s">'<span class="pl-s">4</span>'</span>,  <span class="pl-c">//資 訊 台</span>
+  <span class="pl-s">'<span class="pl-s">fhzw</span>'</span> =&gt; <span class="pl-s">'<span class="pl-s">5</span>'</span>,  <span class="pl-c">//中 文 台</span>
+  <span class="pl-s">'<span class="pl-s">fhhk</span>'</span> =&gt; <span class="pl-s">'<span class="pl-s">6</span>'</span>,  <span class="pl-c">//香 港 台</span>
   );
-<span class="pl-s1"><span class="pl-c1">$</span>url</span> = <span class="pl-s">'http://m.fengshows.com/api/v3/live?live_type=tv'</span>;
-<span class="pl-s1"><span class="pl-c1">$</span>response</span> = get_data(<span class="pl-s1"><span class="pl-c1">$</span>url</span>);
-<span class="pl-s1"><span class="pl-c1">$</span>channels</span> = json_decode(<span class="pl-s1"><span class="pl-c1">$</span>response</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>url</span> = <span class="pl-s">'<span class="pl-s">http://m.fengshows.com/api/v3/live?live_type=tv</span>'</span>;
+<span class="pl-s1"><span class="pl-c1">$</span>response</span> = <span class="pl-en">get_data</span>(<span class="pl-s1"><span class="pl-c1">$</span>url</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>channels</span> = <span class="pl-en">json_decode</span>(<span class="pl-s1"><span class="pl-c1">$</span>response</span>);
 <span class="pl-k">foreach</span> (<span class="pl-s1"><span class="pl-c1">$</span>channels</span> <span class="pl-k">as</span> <span class="pl-s1"><span class="pl-c1">$</span>channel</span>) {
   <span class="pl-k">if</span>(<span class="pl-s1"><span class="pl-c1">$</span>channel</span>-&gt;<span class="pl-c1">order</span>==<span class="pl-s1"><span class="pl-c1">$</span>tv</span>[<span class="pl-s1"><span class="pl-c1">$</span>id</span>]){
     <span class="pl-s1"><span class="pl-c1">$</span>channelId</span> = <span class="pl-s1"><span class="pl-c1">$</span>channel</span>-&gt;<span class="pl-c1">_id</span>;
     <span class="pl-k">break</span>; 
   }    
 }
-<span class="pl-s1"><span class="pl-c1">$</span>info</span> = get_url(<span class="pl-s1"><span class="pl-c1">$</span>channelId</span>,<span class="pl-s">'FHD'</span>);
-<span class="pl-k">if</span>(<span class="pl-s1"><span class="pl-c1">$</span>info</span>-&gt;<span class="pl-c1">status</span> !== <span class="pl-s">'0'</span>){
-  <span class="pl-s1"><span class="pl-c1">$</span>info</span> = get_url(<span class="pl-s1"><span class="pl-c1">$</span>channelId</span>,<span class="pl-s">'HD'</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>info</span> = <span class="pl-en">get_url</span>(<span class="pl-s1"><span class="pl-c1">$</span>channelId</span>,<span class="pl-s">'<span class="pl-s">FHD</span>'</span>);
+<span class="pl-k">if</span>(<span class="pl-s1"><span class="pl-c1">$</span>info</span>-&gt;<span class="pl-c1">status</span> !== <span class="pl-s">'<span class="pl-s">0</span>'</span>){
+  <span class="pl-s1"><span class="pl-c1">$</span>info</span> = <span class="pl-en">get_url</span>(<span class="pl-s1"><span class="pl-c1">$</span>channelId</span>,<span class="pl-s">'<span class="pl-s">HD</span>'</span>);
 }
 <span class="pl-s1"><span class="pl-c1">$</span>liveUrl</span> = <span class="pl-s1"><span class="pl-c1">$</span>info</span>-&gt;<span class="pl-c1">data</span>-&gt;<span class="pl-c1">live_url</span>;
-header(<span class="pl-s">'Location:'</span>.<span class="pl-s1"><span class="pl-c1">$</span>liveUrl</span>);
+<span class="pl-en">header</span>(<span class="pl-s">'<span class="pl-s">Location:</span>'</span>.<span class="pl-s1"><span class="pl-c1">$</span>liveUrl</span>);
 
 <span class="pl-k">function</span> <span class="pl-en">get_url</span>(<span class="pl-s1"><span class="pl-c1">$</span>cid</span>, <span class="pl-s1"><span class="pl-c1">$</span>qa</span>){
-  <span class="pl-s1"><span class="pl-c1">$</span>url</span> = "<span class="pl-s">https://m.fengshows.com/api/v3/hub/live/auth-url?live_id=</span>{<span class="pl-s1"><span class="pl-c1">$</span>cid</span>}<span class="pl-s">&amp;live_qa=</span>{<span class="pl-s1"><span class="pl-c1">$</span>qa</span>}";
-  <span class="pl-s1"><span class="pl-c1">$</span>response</span> = get_data(<span class="pl-s1"><span class="pl-c1">$</span>url</span>);
-  <span class="pl-s1"><span class="pl-c1">$</span>data</span> = json_decode(<span class="pl-s1"><span class="pl-c1">$</span>response</span>);
+  <span class="pl-s1"><span class="pl-c1">$</span>url</span> = <span class="pl-s">"<span class="pl-s">https://m.fengshows.com/api/v3/hub/live/auth-url?live_id=</span>{<span class="pl-s1"><span class="pl-c1">$</span>cid</span>}<span class="pl-s">&amp;live_qa=</span>{<span class="pl-s1"><span class="pl-c1">$</span>qa</span>}"</span>;
+  <span class="pl-s1"><span class="pl-c1">$</span>response</span> = <span class="pl-en">get_data</span>(<span class="pl-s1"><span class="pl-c1">$</span>url</span>);
+  <span class="pl-s1"><span class="pl-c1">$</span>data</span> = <span class="pl-en">json_decode</span>(<span class="pl-s1"><span class="pl-c1">$</span>response</span>);
   <span class="pl-k">return</span> <span class="pl-s1"><span class="pl-c1">$</span>data</span>;
 }
 <span class="pl-k">function</span> <span class="pl-en">get_data</span>(<span class="pl-s1"><span class="pl-c1">$</span>url</span>){
 <span class="pl-s1"><span class="pl-c1">$</span>header</span>=<span class="pl-en">array</span>(
-  <span class="pl-s">'fengshows-client: app(ios,5040718)'</span>,
-  <span class="pl-s">'User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 15_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/98.0.4758.85 Mobile/15E148 Safari/604.1'</span>,
-  <span class="pl-s">'token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiIzMWUzZmVjMC1lY2IzLTExZWQtOWUxNS1mM2FiZjliZjhkOTYiLCJuYW1lIjoiIiwidmlwIjowLCJqdGkiOiJqQm5nMXBvZlQiLCJpYXQiOjE2ODM0NDg5ODksImV4cCI6MTY4NjA0MDk4OX0.0r8PuLetMiusCJul2tuPRzU8fnhxhqxBoycDV0_vKxI'</span>, 
+  <span class="pl-s">'<span class="pl-s">fengshows-client: app(ios,5040718)</span>'</span>,
+  <span class="pl-s">'<span class="pl-s">User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 15_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/98.0.4758.85 Mobile/15E148 Safari/604.1</span>'</span>,
+  <span class="pl-s">'<span class="pl-s">token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiIzMWUzZmVjMC1lY2IzLTExZWQtOWUxNS1mM2FiZjliZjhkOTYiLCJuYW1lIjoiIiwidmlwIjowLCJqdGkiOiJqQm5nMXBvZlQiLCJpYXQiOjE2ODM0NDg5ODksImV4cCI6MTY4NjA0MDk4OX0.0r8PuLetMiusCJul2tuPRzU8fnhxhqxBoycDV0_vKxI</span>'</span>, 
 );
-<span class="pl-s1"><span class="pl-c1">$</span>ch</span> = curl_init();
-curl_setopt(<span class="pl-s1"><span class="pl-c1">$</span>ch</span>, <span class="pl-c1">CURLOPT_URL</span>, <span class="pl-s1"><span class="pl-c1">$</span>url</span>);
-curl_setopt(<span class="pl-s1"><span class="pl-c1">$</span>ch</span>, <span class="pl-c1">CURLOPT_RETURNTRANSFER</span>, <span class="pl-c1">TRUE</span>);
-curl_setopt(<span class="pl-s1"><span class="pl-c1">$</span>ch</span>, <span class="pl-c1">CURLOPT_SSL_VERIFYPEER</span>, <span class="pl-c1">FALSE</span>);
-curl_setopt(<span class="pl-s1"><span class="pl-c1">$</span>ch</span>, <span class="pl-c1">CURLOPT_SSL_VERIFYHOST</span>, <span class="pl-c1">FALSE</span>);
-curl_setopt(<span class="pl-s1"><span class="pl-c1">$</span>ch</span>, <span class="pl-c1">CURLOPT_HTTPHEADER</span>, <span class="pl-s1"><span class="pl-c1">$</span>header</span>);
-<span class="pl-s1"><span class="pl-c1">$</span>data</span> = curl_exec(<span class="pl-s1"><span class="pl-c1">$</span>ch</span>);
-curl_close(<span class="pl-s1"><span class="pl-c1">$</span>ch</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>ch</span> = <span class="pl-en">curl_init</span>();
+<span class="pl-en">curl_setopt</span>(<span class="pl-s1"><span class="pl-c1">$</span>ch</span>, <span class="pl-c1">CURLOPT_URL</span>, <span class="pl-s1"><span class="pl-c1">$</span>url</span>);
+<span class="pl-en">curl_setopt</span>(<span class="pl-s1"><span class="pl-c1">$</span>ch</span>, <span class="pl-c1">CURLOPT_RETURNTRANSFER</span>, <span class="pl-c1">TRUE</span>);
+<span class="pl-en">curl_setopt</span>(<span class="pl-s1"><span class="pl-c1">$</span>ch</span>, <span class="pl-c1">CURLOPT_SSL_VERIFYPEER</span>, <span class="pl-c1">FALSE</span>);
+<span class="pl-en">curl_setopt</span>(<span class="pl-s1"><span class="pl-c1">$</span>ch</span>, <span class="pl-c1">CURLOPT_SSL_VERIFYHOST</span>, <span class="pl-c1">FALSE</span>);
+<span class="pl-en">curl_setopt</span>(<span class="pl-s1"><span class="pl-c1">$</span>ch</span>, <span class="pl-c1">CURLOPT_HTTPHEADER</span>, <span class="pl-s1"><span class="pl-c1">$</span>header</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>data</span> = <span class="pl-en">curl_exec</span>(<span class="pl-s1"><span class="pl-c1">$</span>ch</span>);
+<span class="pl-en">curl_close</span>(<span class="pl-s1"><span class="pl-c1">$</span>ch</span>);
 <span class="pl-k">return</span> <span class="pl-s1"><span class="pl-c1">$</span>data</span>;
 }</pre></div></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
