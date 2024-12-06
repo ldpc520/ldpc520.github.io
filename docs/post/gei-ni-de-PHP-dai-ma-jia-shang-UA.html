@@ -90,14 +90,14 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <div class="highlight highlight-text-html-php"><pre class="notranslate">  <span class="pl-s1"><span class="pl-c1">$</span>user_agent</span> = <span class="pl-s1"><span class="pl-c1">$</span><span class="pl-c1">_SERVER</span></span>[<span class="pl-s">'<span class="pl-s">HTTP_USER_AGENT</span>'</span>];
 <span class="pl-k">if</span> (<span class="pl-s1"><span class="pl-c1">$</span>user_agent</span> != <span class="pl-s">'<span class="pl-s">iptv</span>'</span>) {
     <span class="pl-en">header</span>(<span class="pl-s">'<span class="pl-s">location:</span>'</span> . <span class="pl-s">''</span>);
-    exit;
+    <span class="pl-k">exit</span>;
 }  </pre></div>
 <p><strong>如下面的凤凰卫视代码源码</strong></p>
 <div class="highlight highlight-text-html-php"><pre class="notranslate"><span class="pl-ent">&lt;?php</span>
   <span class="pl-s1"><span class="pl-c1">$</span>user_agent</span> = <span class="pl-s1"><span class="pl-c1">$</span><span class="pl-c1">_SERVER</span></span>[<span class="pl-s">'<span class="pl-s">HTTP_USER_AGENT</span>'</span>];
 <span class="pl-k">if</span> (<span class="pl-s1"><span class="pl-c1">$</span>user_agent</span> != <span class="pl-s">'<span class="pl-s">iptv</span>'</span>) {
     <span class="pl-en">header</span>(<span class="pl-s">'<span class="pl-s">location:</span>'</span> . <span class="pl-s">''</span>);
-    exit;
+    <span class="pl-k">exit</span>;
 } 
 <span class="pl-en">header</span>(<span class="pl-s">"<span class="pl-s">Content-Type: text/json; charset=UTF-8</span>"</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>id</span> = <span class="pl-en">isset</span>(<span class="pl-s1"><span class="pl-c1">$</span><span class="pl-c1">_GET</span></span>[<span class="pl-s">'<span class="pl-s">id</span>'</span>])?<span class="pl-s1"><span class="pl-c1">$</span><span class="pl-c1">_GET</span></span>[<span class="pl-s">'<span class="pl-s">id</span>'</span>]:<span class="pl-s">'<span class="pl-s">fhzx</span>'</span>;
