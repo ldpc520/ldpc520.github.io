@@ -102,9 +102,9 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <span class="pl-en">header</span>(<span class="pl-s">"<span class="pl-s">Content-Type: text/json; charset=UTF-8</span>"</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>id</span> = <span class="pl-en">isset</span>(<span class="pl-s1"><span class="pl-c1">$</span><span class="pl-c1">_GET</span></span>[<span class="pl-s">'<span class="pl-s">id</span>'</span>])?<span class="pl-s1"><span class="pl-c1">$</span><span class="pl-c1">_GET</span></span>[<span class="pl-s">'<span class="pl-s">id</span>'</span>]:<span class="pl-s">'<span class="pl-s">fhzx</span>'</span>;
 <span class="pl-s1"><span class="pl-c1">$</span>tv</span> = <span class="pl-en">array</span>(
-  <span class="pl-s">'<span class="pl-s">fhzx</span>'</span> =&gt; <span class="pl-s">'<span class="pl-s">4</span>'</span>,  <span class="pl-c1"><span class="pl-c">/</span>/資 訊 台</span>
-  <span class="pl-s">'<span class="pl-s">fhzw</span>'</span> =&gt; <span class="pl-s">'<span class="pl-s">5</span>'</span>,  <span class="pl-c1"><span class="pl-c">/</span>/中 文 台</span>
-  <span class="pl-s">'<span class="pl-s">fhhk</span>'</span> =&gt; <span class="pl-s">'<span class="pl-s">6</span>'</span>,  <span class="pl-c1"><span class="pl-c">/</span>/香 港 台</span>
+  <span class="pl-s">'<span class="pl-s">fhzx</span>'</span> =&gt; <span class="pl-s">'<span class="pl-s">4</span>'</span>,  <span class="pl-c">//資 訊 台</span>
+  <span class="pl-s">'<span class="pl-s">fhzw</span>'</span> =&gt; <span class="pl-s">'<span class="pl-s">5</span>'</span>,  <span class="pl-c">//中 文 台</span>
+  <span class="pl-s">'<span class="pl-s">fhhk</span>'</span> =&gt; <span class="pl-s">'<span class="pl-s">6</span>'</span>,  <span class="pl-c">//香 港 台</span>
   );
 <span class="pl-s1"><span class="pl-c1">$</span>url</span> = <span class="pl-s">'<span class="pl-s">http://m.fengshows.com/api/v3/live?live_type=tv</span>'</span>;
 <span class="pl-s1"><span class="pl-c1">$</span>response</span> = <span class="pl-en">get_data</span>(<span class="pl-s1"><span class="pl-c1">$</span>url</span>);
