@@ -213,9 +213,9 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 
 
     <span class="pl-k">if</span> (<span class="pl-s1"><span class="pl-c1">$</span>vid</span> == <span class="pl-s">'<span class="pl-s">haoqu</span>'</span>) {
-        <span class="pl-c1"><span class="pl-c">//</span><span class="pl-s1">http</span>:<span class="pl-c1">//</span><span class="pl-c1">192.168</span>.<span class="pl-c1">31.11</span>:<span class="pl-c1">1008</span><span class="pl-c1">/</span><span class="pl-s1">proxy</span><span class="pl-c1">/</span><span class="pl-s1">zuhe</span>.<span class="pl-c1">php</span>?<span class="pl-s1">vid</span><span class="pl-c1">=</span><span class="pl-s1">haoqu</span><span class="pl-c1">&amp;</span><span class="pl-s1">id</span><span class="pl-c1">=</span><span class="pl-c1">38072</span></span>
+        <span class="pl-c">//http://192.168.31.11:1008/proxy/zuhe.php?vid=haoqu&amp;id=38072</span>
         <span class="pl-s1"><span class="pl-c1">$</span>id</span>=<span class="pl-s1"><span class="pl-c1">$</span><span class="pl-c1">_REQUEST</span></span>[<span class="pl-s">'<span class="pl-s">id</span>'</span>];
-        <span class="pl-c1"><span class="pl-c">//</span><span class="pl-s1">获取网页内容</span></span>
+        <span class="pl-c">//获取网页内容</span>
         <span class="pl-s1"><span class="pl-c1">$</span>url</span> = <span class="pl-s">"<span class="pl-s">http://tv.haoqu99.com/e/extend/tv.php?id=</span>"</span>.<span class="pl-s1"><span class="pl-c1">$</span>id</span>;
         <span class="pl-s1"><span class="pl-c1">$</span>info</span>=<span class="pl-en">file_get_contents</span>(<span class="pl-s1"><span class="pl-c1">$</span>url</span>);
         <span class="pl-en">preg_match</span>(<span class="pl-s">'<span class="pl-s">/source src="(.*?)"/i</span>'</span>,<span class="pl-s1"><span class="pl-c1">$</span>info</span>,<span class="pl-s1"><span class="pl-c1">$</span>m</span>);
@@ -227,15 +227,15 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 
     <span class="pl-k">if</span> (<span class="pl-s1"><span class="pl-c1">$</span>vid</span> == <span class="pl-s">'<span class="pl-s">db</span>'</span>) {
 
-        <span class="pl-s1"></span><span class="pl-c1"><span class="pl-c">//</span> <span class="pl-s1">http</span>:<span class="pl-c1">//</span><span class="pl-c1">127.0</span>.<span class="pl-c1">0.1</span><span class="pl-c1">/</span><span class="pl-s1">test</span>.<span class="pl-c1">php</span>?<span class="pl-s1">vid</span><span class="pl-c1">=</span><span class="pl-s1">db</span><span class="pl-c1">&amp;</span><span class="pl-s1">id</span><span class="pl-c1">=</span><span class="pl-c1">0</span></span>
-        <span class="pl-s1"></span><span class="pl-c1"><span class="pl-c">/</span><span class="pl-c1">*</span> <span class="pl-c1">ID</span><span class="pl-c1">=</span><span class="pl-c1">0</span> <span class="pl-s1">到</span> <span class="pl-c1">6</span> <span class="pl-c1">*</span><span class="pl-c1">/</span></span>
+        <span class="pl-c">// http://127.0.0.1/test.php?vid=db&amp;id=0</span>
+        <span class="pl-c">/* ID=0 到 6 */</span>
         <span class="pl-s1"><span class="pl-c1">$</span>id</span> = <span class="pl-s1"><span class="pl-c1">$</span><span class="pl-c1">_GET</span></span>[<span class="pl-s">"<span class="pl-s">id</span>"</span>];
         <span class="pl-s1"><span class="pl-c1">$</span>txt_bb</span> = <span class="pl-s">"<span class="pl-s">http://192.168.31.11:1008/tv.txt</span>"</span>;
         <span class="pl-k">if</span> (<span class="pl-en">file_get_contents</span>(<span class="pl-s1"><span class="pl-c1">$</span>txt_bb</span>)) {
         <span class="pl-s1"><span class="pl-c1">$</span>txt_data</span> = <span class="pl-en">file</span>(<span class="pl-s1"><span class="pl-c1">$</span>txt_bb</span>);
         <span class="pl-s1"><span class="pl-c1">$</span>txt_hh</span> = <span class="pl-en">chop</span>(<span class="pl-s1"><span class="pl-c1">$</span>txt_data</span>[<span class="pl-s1"><span class="pl-c1">$</span>id</span>]);
         <span class="pl-s1"><span class="pl-c1">$</span>txt_ok</span> = <span class="pl-en">substr</span>(<span class="pl-s1"><span class="pl-c1">$</span>txt_hh</span>, <span class="pl-en">strripos</span>(<span class="pl-s1"><span class="pl-c1">$</span>txt_hh</span>, <span class="pl-s">"<span class="pl-s">,</span>"</span>) + <span class="pl-c1">1</span>);
-        <span class="pl-s1"><span class="pl-c1">$</span>txt_ok</span> = <span class="pl-en">str_replace</span>(<span class="pl-s">"<span class="pl-s">&lt;br&gt;</span>"</span>, <span class="pl-s">""</span>, <span class="pl-s1"><span class="pl-c1">$</span>txt_ok</span>); <span class="pl-s1"></span><span class="pl-c1"><span class="pl-c">//</span> <span class="pl-s1">添加删除</span> <span class="pl-c1">&lt;</span><span class="pl-s1">br</span><span class="pl-c1">&gt;</span> <span class="pl-s1">字符的代码</span></span>
+        <span class="pl-s1"><span class="pl-c1">$</span>txt_ok</span> = <span class="pl-en">str_replace</span>(<span class="pl-s">"<span class="pl-s">&lt;br&gt;</span>"</span>, <span class="pl-s">""</span>, <span class="pl-s1"><span class="pl-c1">$</span>txt_ok</span>); <span class="pl-c">// 添加删除 &lt;br&gt; 字符的代码</span>
         <span class="pl-en">header</span>(<span class="pl-s">'<span class="pl-s">Location: </span>'</span>. <span class="pl-s1"><span class="pl-c1">$</span>txt_ok</span>);
         }
 
